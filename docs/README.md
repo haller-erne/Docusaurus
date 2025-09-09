@@ -1,13 +1,13 @@
-# ctrlX Communication Software Documentation
+# Haller + Erne ctrlX Solutions Documentation
 
-This public documentation covers the user-facing aspects of the Haller + Erne ctrlX Communication Software project, a comprehensive solution for integrating Stahlwille 766 WiFi wrenches with the ctrlX CORE ecosystem.
+This public documentation portal covers user-facing documentation for Haller + Erne's ctrlX CORE ecosystem solutions. Our products provide comprehensive integration capabilities for industrial automation and monitoring within the Bosch Rexroth ctrlX platform.
 
-## Project Overview
+## Available Products
 
-The ctrlX Communication Software is a multi-component system that enables seamless integration of Stahlwille torque tools with Bosch Rexroth's ctrlX CORE platform. The system provides real-time tool control, data collection, and monitoring capabilities through a modern web interface and robust backend services.
+### Stahlwille 766 Integration App
+A comprehensive solution for integrating Stahlwille 766 WiFi torque wrenches with the ctrlX CORE ecosystem, providing real-time tool control, data collection, and monitoring capabilities.
 
-## Key Features
-
+**Key Features:**
 - Real-time tool state monitoring and control
 - Configurable parameter sets (PSets) for different tightening operations
 - Live torque and angle data visualization
@@ -17,16 +17,23 @@ The ctrlX Communication Software is a multi-component system that enables seamle
 - Secure snap package deployment
 - Multi-architecture support (AMD64/ARM64)
 
-## Documentation Structure
+**Documentation:** [Stahlwille 766 App User Guide](./stahlwille-766/user-guide.md)
 
-- [User Guide](./user-guide/user-guide.md) - Complete user guide and overview
-- [Installation](./user-guide/installation.md) - Installation and setup instructions
-- [Configuration](./user-guide/configuration.md) - Configuration options and settings
-- [UI Widget](./user-guide/ui-widget.md) - User interface documentation
-- [Data Layer](./user-guide/data-layer.md) - Data integration and connectivity
-- [Licensing](./user-guide/licensing.md) - Licensing and activation guide
-- [Troubleshooting](./user-guide/troubleshooting.md) - Common issues and solutions
-- [Quick Reference](./user-guide/quick-reference.md) - Quick reference guide
+### Opex Solution
+*Coming Soon* - Industrial optimization and efficiency monitoring solution for ctrlX CORE.
+
+**Documentation:** [Opex Documentation](./opex/overview.md) *(In Development)*
+
+## Product Documentation Structure
+
+Each product includes comprehensive user documentation covering:
+- Installation and setup instructions
+- Configuration options and settings  
+- User interface documentation
+- Data integration and connectivity
+- Licensing and activation guides
+- Troubleshooting and support
+- Quick reference materials
 
 ## Developer Documentation
 

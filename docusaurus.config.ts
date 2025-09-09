@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'ctrlX Communication Software',
-  tagline: 'Documentation for ctrlX Communication Software',
+  title: 'Haller + Erne ctrlX Solutions',
+  tagline: 'Documentation for ctrlX CORE Integration Solutions',
   favicon: 'img/logo.svg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -25,7 +25,7 @@ const config: Config = {
   organizationName: 'haller-erne', // Usually your GitHub org/user name.
   projectName: 'Docusaurus', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -84,9 +84,9 @@ const config: Config = {
     // Replace with your project's social card
   image: 'img/New Logo.png',
     navbar: {
-      title: 'ctrlX Communication Software',
+      title: 'Haller + Erne ctrlX Solutions',
       logo: {
-        alt: 'ctrlX Communication Software Logo',
+        alt: 'Haller + Erne ctrlX Solutions Logo',
         src: 'img/New Logo.png',
       },
       items: [
@@ -107,20 +107,19 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'User Guide',
+          title: 'Stahlwille 766 App',
           items: [
-            {label: 'User Guide', to: '/docs/user-guide/overview'},
-            {label: 'Installation', to: '/docs/user-guide/installation'},
-            {label: 'Configuration', to: '/docs/user-guide/configuration'},
-            {label: 'UI Widget', to: '/docs/user-guide/ui-widget'},
+            {label: 'User Guide', to: '/docs/stahlwille-766/user-guide'},
+            {label: 'Installation', to: '/docs/stahlwille-766/installation'},
+            {label: 'Configuration', to: '/docs/stahlwille-766/configuration'},
+            {label: 'Troubleshooting', to: '/docs/stahlwille-766/troubleshooting'},
           ],
         },
         {
-          title: 'Support',
+          title: 'Products',
           items: [
-            {label: 'Troubleshooting', to: '/docs/user-guide/troubleshooting'},
-            {label: 'Quick Reference', to: '/docs/user-guide/quick-reference'},
-            {label: 'Licensing', to: '/docs/user-guide/licensing'},
+            {label: 'Stahlwille 766 Integration', to: '/docs/stahlwille-766/user-guide'},
+            {label: 'Opex Solution', to: '/docs/opex/opex-overview'},
           ],
         },
         {
@@ -130,7 +129,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} ctrlX Communication Software Documentation`,
+      copyright: `© ${new Date().getFullYear()} Haller + Erne ctrlX Solutions Documentation`,
     },
     prism: {
       theme: prismThemes.github,
