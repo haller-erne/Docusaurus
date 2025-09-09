@@ -1,63 +1,131 @@
-## ctrlX Communication Software Documentation Portal
+# Haller + Erne ctrlX Solutions Documentation
 
-This repository hosts the technical documentation site for the ctrlX Communication Software platform. It provides:
+This repository hosts the public documentation portal for **Haller + Erne's ctrlX CORE ecosystem solutions**. Our documentation provides comprehensive user guides and technical resources for industrial automation professionals working with ctrlX-integrated products.
 
-* Getting started guidance
-* Architecture overviews
-* API reference entry points
-* Backend / Frontend / Communication layer documentation
-* Configuration & licensing details
+🌐 **Live Site:** [https://haller-erne.github.io/Docusaurus/](https://haller-erne.github.io/Docusaurus/)
 
-The site is powered by Docusaurus but all starter template examples have been removed and replaced with product‑specific content.
+## 🏭 Available Products
 
-## Prerequisites
+### Stahlwille 766 Integration App
+Complete solution for integrating Stahlwille 766 WiFi torque wrenches with ctrlX CORE.
 
-* Node.js 22+
-* npm (bundled with Node)
+**Features:**
+- Real-time tool state monitoring and control
+- Configurable parameter sets (PSets) for different operations
+- Live torque and angle data visualization
+- ctrlX DataLayer integration for PLC connectivity
+- Secure snap package deployment
 
-## Install Dependencies
+**Documentation:** [View User Guide →](docs/stahlwille-766/user-guide.md)
 
-```bash
-npm install
-```
+### Opex Solution *(Coming Soon)*
+Industrial optimization and efficiency monitoring solution for ctrlX CORE.
 
-## Start Local Dev Server
+**Planned Features:**
+- Performance optimization monitoring
+- Efficiency analytics and reporting
+- Advanced reporting and insights
 
-```bash
-npm start
-```
-The site will open in your browser (hot reload enabled).
+**Documentation:** [Learn More →](docs/opex/overview.md)
 
-## Build Static Site
+## 📚 What's Included
 
-```bash
-npm run build
-```
-Output is written to `build/`.
+Each product includes comprehensive documentation covering:
+- **Installation & Setup** - Step-by-step installation guides
+- **Configuration** - Detailed configuration tutorials and best practices
+- **User Interface** - Complete UI documentation and widget usage
+- **Data Integration** - ctrlX DataLayer connectivity and PLC integration
+- **Licensing** - Activation guides and compliance information
+- **Troubleshooting** - Common issues, solutions, and diagnostic procedures
+- **Quick Reference** - Essential commands and procedures
 
-## Preview Production Build Locally
+## 🚀 Quick Start
 
-```bash
-npm run serve
-```
+### Prerequisites
+- **Node.js** 22+ (with npm)
+- **Git** for version control
 
-## Deployment (GitHub Pages)
+### Local Development
 
-Configure `url`, `baseUrl`, `organizationName`, and `projectName` in `docusaurus.config.ts`, then:
+1. **Clone & Install**
+   ```bash
+   git clone https://github.com/haller-erne/Docusaurus.git
+   cd Docusaurus
+   npm install
+   ```
 
-```bash
-npm run deploy
-```
+2. **Start Development Server**
+   ```bash
+   npm start
+   ```
+   Opens at `http://localhost:3000/Docusaurus/` with hot reload enabled.
 
-This runs a build and publishes to the `gh-pages` branch.
+3. **Build for Production**
+   ```bash
+   npm run build
+   ```
+   Static files generated in `build/` directory.
 
-## Contributing Content
+4. **Preview Production Build**
+   ```bash
+   npm run serve
+   ```
 
-1. Add or edit Markdown files under `docs/`
-2. Update `sidebars.ts` if adding new sections
-3. Run `npm start` to verify
-4. Submit a pull request
+### Deployment
 
-## License
+The site automatically deploys when changes are pushed to the `main` branch via GitHub Actions workflow.
 
-Documentation © Bosch Rexroth AG (ctrlX Communication Software). All rights reserved.
+## 📖 Contributing Documentation
+
+### Adding New Products
+
+To add documentation for a new Haller + Erne ctrlX product:
+
+1. **Create Product Directory**
+   ```bash
+   mkdir docs/your-product-name
+   ```
+
+2. **Add Documentation Files**
+   - Create markdown files following the established pattern
+   - Include: user guide, installation, configuration, troubleshooting, etc.
+
+3. **Update Navigation**
+   - Add product section to `sidebars.ts`
+   - Update homepage cards in `src/pages/index.tsx`
+   - Add footer links in `docusaurus.config.ts`
+
+4. **Test & Deploy**
+   ```bash
+   npm start  # Test locally
+   git add .
+   git commit -m "Add [product-name] documentation"
+   git push origin main
+   ```
+
+### Content Guidelines
+
+- Use clear, action-oriented headings
+- Include code examples and screenshots where helpful
+- Follow the established file naming conventions
+- Test all links and ensure they work properly
+
+## 🔒 Developer Documentation
+
+**Advanced technical documentation** including API references, architecture details, backend/frontend development guides, and system internals are maintained in a **separate private repository** for security purposes.
+
+**Access:** Contact your system administrator or project lead for developer documentation credentials.
+
+## 📄 License & Support
+
+**License:** Documentation © 2025 Haller + Erne GmbH. All rights reserved.
+
+**Support:**
+- 📧 **Email:** registration@haller-erne.com  
+- 🏢 **Company:** Haller + Erne GmbH
+- 📍 **Address:** Im Schelmental 4, D-74226 Nordheim, Germany
+- 📞 **Phone:** +49 7133 96 12-30
+
+---
+
+*This documentation portal is built with [Docusaurus](https://docusaurus.io/) and optimized for public consumption of Haller + Erne ctrlX solutions.*
