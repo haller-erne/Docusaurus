@@ -45,7 +45,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/haller-erne/Docusaurus/tree/main/docs/',
+            'https://github.com/haller-erne/Docusaurus/tree/main/',
         },
         blog: false, // Disable blog since we removed it
         theme: {
