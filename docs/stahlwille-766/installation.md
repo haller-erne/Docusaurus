@@ -11,5 +11,6 @@ sidebar_label: Installation
 5. Confirm the sidebar shows "Stahlwille Communication App" and the dashboard widget appears.
 
 
-![Confirm install](../../static/img/SW766/Confirm%20install.png)
 ![Allow unknown sources](../../static/img/SW766/Allow%20unknown%20sources.png)
+![Confirm install](../../static/img/SW766/Installation%20Confirm.png)
+
