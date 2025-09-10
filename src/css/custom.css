@@ -28,3 +28,15 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Ensure outline buttons are visible in dark mode */
+[data-theme='dark'] .button--outline {
+  --ifm-button-color: var(--ifm-color-primary);
+  --ifm-button-border-color: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] .button--outline:hover {
+  --ifm-button-color: var(--ifm-color-primary-dark);
+  --ifm-button-border-color: var(--ifm-color-primary-dark);
+  background-color: transparent;
+}

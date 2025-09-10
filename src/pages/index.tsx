@@ -12,7 +12,7 @@ function Hero() {
   const {siteConfig} = useDocusaurusContext();
   const logoUrl = useBaseUrl('img/New Logo.png');
   return (
-  <header className="hero" style={{padding: '4rem 0', background: '#f3f4f6'}}>
+  <header className="hero hero--primary" style={{padding: '4rem 0'}}>
       <div
         className="container"
         style={{
@@ -22,10 +22,10 @@ function Hero() {
           flexWrap: 'wrap',
         }}>
         <div style={{flex: '1 1 420px', minWidth: 320}}>
-          <Heading as="h1" className="hero__title" style={{marginBottom: '1rem', color: '#1f2937'}}>
+          <Heading as="h1" className="hero__title" style={{marginBottom: '1rem'}}>
             {siteConfig.title}
           </Heading>
-          <p className="hero__subtitle" style={{fontSize: '1.25rem', maxWidth: 820, color: '#374151'}}>
+          <p className="hero__subtitle" style={{fontSize: '1.25rem', maxWidth: 820}}>
             {siteConfig.tagline}
           </p>
           <div style={{marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap'}}>
@@ -36,8 +36,8 @@ function Hero() {
               Opex Solution
             </Link>
           </div>
-          <div style={{marginTop: '1.5rem', padding: '1rem', background: '#f8f9fa', borderRadius: '8px', border: '1px solid #e9ecef'}}>
-            <p style={{margin: 0, fontSize: '0.95rem', color: '#495057'}}>
+          <div style={{marginTop: '1.5rem', padding: '1rem', borderRadius: '8px'}} className="alert alert--info">
+            <p style={{margin: 0, fontSize: '0.95rem'}}>
               <strong>Developer Documentation:</strong> Advanced technical documentation including API references, 
               architecture details, and development guides are available in a separate private repository. 
               Contact your system administrator or project lead for access credentials.
