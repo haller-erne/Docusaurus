@@ -1,3 +1,4 @@
+import * as React from 'react';
 import type {ReactNode} from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -10,7 +11,7 @@ import Heading from '@theme/Heading';
 
 function Hero() {
   const {siteConfig} = useDocusaurusContext();
-  const logoUrl = useBaseUrl('img/New Logo.png');
+  const logoUrl = useBaseUrl('img/He logo.png');
   return (
   <header className="hero hero--primary" style={{padding: '4rem 0'}}>
       <div
@@ -36,13 +37,6 @@ function Hero() {
               Opex Solution
             </Link>
           </div>
-          <div style={{marginTop: '1.5rem', padding: '1rem', borderRadius: '8px'}} className="alert alert--info">
-            <p style={{margin: 0, fontSize: '0.95rem'}}>
-              <strong>Developer Documentation:</strong> Advanced technical documentation including API references, 
-              architecture details, and development guides are available in a separate private repository. 
-              Contact your system administrator or project lead for access credentials.
-            </p>
-          </div>
         </div>
     <div style={{flex: '0 0 auto', display: 'flex', justifyContent: 'center'}}>
           <img
@@ -57,13 +51,21 @@ function Hero() {
 }
 
 function FeaturedProducts() {
+  const stahlwilleLogo = useBaseUrl('img/SW766/Dino 766.png');
   return (
     <section className="container" style={{marginTop: '3rem'}}>
       <div className="row">
         <div className="col col--6 margin-bottom--lg">
           <div className="card" style={{border: '1px solid #e5e7eb', boxShadow: '0 2px 6px rgba(0,0,0,0.04)', height: '100%'}}>
             <div className="card__body" style={{display:'flex', flexDirection:'column', gap:'0.75rem', padding:'2rem'}}>
-              <Heading as="h3" style={{margin:0}}>Stahlwille 766 Integration App</Heading>
+              <div style={{display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '0.5rem'}}>
+                <img 
+                  src={stahlwilleLogo} 
+                  alt="Stahlwille Logo" 
+                  style={{width: '40px', height: '40px', objectFit: 'contain'}}
+                />
+                <Heading as="h3" style={{margin:0}}>Stahlwille 766 Integration App</Heading>
+              </div>
               <p style={{margin:0, fontSize:'0.95rem', lineHeight:1.5}}>
                 Comprehensive solution for integrating Stahlwille 766 WiFi torque wrenches with ctrlX CORE. 
                 Features real-time monitoring, configurable parameter sets, and seamless DataLayer integration.

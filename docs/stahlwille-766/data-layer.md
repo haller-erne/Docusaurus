@@ -8,15 +8,15 @@ sidebar_label: Data Layer
 
 Write `command` to set `pset` and pulse `enable` (rising edge loads PSet; falling edge aborts active tightening). Continuous enable not supported.
 
-Errors (missing PSet, transfer failures) reported through `state`.
+Errors (missing PSet, transfer failures, unlicensed software) reported through `state`.
+![Datalayer Type List](/img/SW766/Datalayer%20list.png)
+
+![Data Layer Tool1](/img/SW766/Data%20layer%20tool1.png)
+
+![Data Layer Disable](/img/SW766/Data%20Layer%20Disable.png)
 
 ### Summary
 - `command`: write (pset + enable edge)
 - `state`: read (connection/operational)
 - `lastResult`: read (torque/angle/result JSON)
 
-> TODO Image 3 placeholder (Data Layer browser view).
-:::note Image Placeholder
-`/img/user-guide/datalayer-nodes.png` – Data Layer browser with nodes expanded.
-`/img/user-guide/datalayer-lastresult.png` – Example `lastResult` JSON payload.
-:::

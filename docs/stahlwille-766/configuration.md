@@ -50,8 +50,4 @@ Blank cells indicate the parameter is not used for that tool type.
 }
 ```
 
-> TODO Image 1 placeholder (`appdata.json` editor view).
-:::note Image Placeholder
-`/img/user-guide/config-editor.png` – Editor with highlighted required fields.
-`/img/user-guide/config-pset-table.png` – Table view of multiple PSets.
-:::
+![appdata.json editor view](/img/SW766/appdata.png)

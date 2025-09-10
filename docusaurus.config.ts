@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Haller + Erne ctrlX Solutions',
   tagline: 'Documentation for ctrlX CORE Integration Solutions',
-  favicon: 'img/logo.svg',
+  favicon: 'img/He logo.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -82,12 +82,12 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-  image: 'img/New Logo.png',
+  image: 'img/He logo.png',
     navbar: {
       title: 'Haller + Erne ctrlX Solutions',
       logo: {
         alt: 'Haller + Erne ctrlX Solutions Logo',
-        src: 'img/New Logo.png',
+        src: 'img/He logo.png',
       },
       items: [
         {

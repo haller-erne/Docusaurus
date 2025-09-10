@@ -18,13 +18,13 @@ Tested on ctrlX OS V3.6.2 (arm64 snap for Core X3, amd64 snap for Core X7).
 :::
 
 ## Sections
-- Installation
-- Configuration (`appdata.json`)
-- Applying changes (restart flow)
-- UI & Widget usage
-- Data Layer control
-- Licensing
-- Troubleshooting
-- Quick reference
+- [Installation](./installation.md)
+- [Configuration (`appdata.json`)](./configuration.md)
+- [Applying changes (restart flow)](./applying-changes.md)
+- [UI & Widget usage](./ui-widget.md)
+- [Data Layer control](./data-layer.md)
+- [Licensing](./licensing.md)
+- [Troubleshooting](./troubleshooting.md)
+- [Quick reference](./quick-reference.md)
 
 Proceed in order if you are new; jump directly to Configuration or Data Layer once familiar.

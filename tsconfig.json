@@ -1,7 +1,8 @@
 {
   // This file is not used in compilation. It is here just for a nice editor experience.
-  "extends": "@docusaurus/tsconfig",
+  // "extends": "@docusaurus/tsconfig", // removed because package not found
   "compilerOptions": {
+    "jsx": "react",
     "baseUrl": "."
   },
   "exclude": [".docusaurus", "build"]
