@@ -9,7 +9,7 @@ The `outputs.json` file controls the export and posting behavior. It is located 
 Example `outputs.json`:
 ```json
 {
-  "OutputHttpURL": "http://127.0.0.1:8889",
+  "OutputHttpURL": "http://127.0.0.1:8889/x",
   "TempStoragePath": ""
 }
 ```
@@ -32,7 +32,7 @@ The posting is asynchronous and fire-and-forget - it logs success or failure but
 To integrate with sys3xx:
 
 1. Ensure sys3xx gateway is running and listening on the configured URL.
-2. Set `OutputHttpURL` in `outputs.json` to point to the gateway's endpoint (e.g., `http://192.168.1.50:9000/api/tightening`).
+2. Set `OutputHttpURL` in `outputs.json` to point to the gateway's endpoint (e.g., `http://127.0.0.1:8889/x`).
 3. The application will automatically send tightening data after each cycle.
 
 ### Disabling Export
