@@ -29,6 +29,7 @@ const sidebars: SidebarsConfig = {
         'stahlwille-766/applying-changes',
         'stahlwille-766/ui-widget',
         'stahlwille-766/data-layer',
+        'stahlwille-766/outputcureves',
         'stahlwille-766/licensing',
         'stahlwille-766/troubleshooting',
         'stahlwille-766/quick-reference',
