@@ -30,10 +30,10 @@ function Hero() {
             {siteConfig.tagline}
           </p>
           <div style={{marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap'}}>
-            <Link className="button button--secondary button--lg" style={{fontWeight:600}} to="/docs/stahlwille-766/user-guide">
+            <Link className="button button--secondary button--lg" style={{fontWeight:600}} to="/docs/shared/stahlwille/user-guide">
               Stahlwille 766 App
             </Link>
-            <Link className="button button--outline button--lg" to="/docs/opex/opex-overview">
+            <Link className="button button--outline button--lg" to="/docs/shared/opex/overview">
               Opex Solution
             </Link>
           </div>
@@ -71,8 +71,8 @@ function FeaturedProducts() {
                 Features real-time monitoring, configurable parameter sets, and seamless DataLayer integration.
               </p>
               <div style={{display:'flex', gap:'0.75rem', flexWrap:'wrap', marginTop:'auto'}}>
-                <Link className="button button--primary button--md" to="/docs/stahlwille-766/user-guide">User Guide</Link>
-                <Link className="button button--secondary button--md" to="/docs/stahlwille-766/installation">Installation</Link>
+                <Link className="button button--primary button--md" to="/docs/shared/stahlwille/user-guide">User Guide</Link>
+                <Link className="button button--secondary button--md" to="/docs/shared/stahlwille/installation">Installation</Link>
               </div>
             </div>
           </div>
@@ -86,7 +86,7 @@ function FeaturedProducts() {
                 Currently in development with advanced analytics and reporting capabilities.
               </p>
               <div style={{display:'flex', gap:'0.75rem', flexWrap:'wrap', marginTop:'auto'}}>
-                <Link className="button button--outline button--md" to="/docs/opex/opex-overview">Learn More</Link>
+                <Link className="button button--outline button--md" to="/docs/shared/opex/overview">Learn More</Link>
                 <span className="badge badge--secondary" style={{alignSelf: 'center'}}>Coming Soon</span>
               </div>
             </div>
