@@ -1,0 +1,61 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start Public Docs",
+            "type": "shell",
+            "command": "npm",
+            "args": ["start"],
+            "group": "test",
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "custom",
+                "pattern": {
+                    "regexp": "^$"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "Starting the development server",
+                    "endsPattern": "Docusaurus website is running at"
+                }
+            },
+            "presentation": {
+                "group": "docs-server"
+            }
+        },
+        {
+            "label": "Start Private Docs",
+            "type": "shell",
+            "command": "npx",
+            "args": ["docusaurus", "start", "--port", "3001"],
+            "options": {
+                "cwd": "${workspaceFolder}/../my-docs private"
+            },
+            "group": "test",
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "custom",
+                "pattern": {
+                    "regexp": "^$"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "Starting the development server",
+                    "endsPattern": "Docusaurus website is running at"
+                }
+            },
+            "presentation": {
+                "group": "docs-server"
+            }
+        },
+        {
+            "label": "Start All Docs",
+            "dependsOn": ["Start Public Docs", "Start Private Docs"],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
