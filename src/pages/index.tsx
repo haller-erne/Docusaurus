@@ -102,32 +102,32 @@ function KeyAreas() {
     {
       title: 'Installation Guide',
       description: 'Step-by-step installation guide for Stahlwille 766 App setup.',
-      to: '/docs/stahlwille-766/installation',
+      to: '/docs/shared/stahlwille/installation',
     },
     {
       title: 'Configuration',
       description: 'Learn how to configure the Stahlwille 766 App for your use case.',
-      to: '/docs/stahlwille-766/configuration',
+      to: '/docs/shared/stahlwille/configuration',
     },
     {
       title: 'UI Widget',
       description: 'Understanding and working with the dashboard widget interface.',
-      to: '/docs/stahlwille-766/ui-widget',
+      to: '/docs/shared/stahlwille/ui-widget',
     },
     {
       title: 'Data Layer Integration',
       description: 'Working with ctrlX DataLayer for PLC connectivity and control.',
-      to: '/docs/stahlwille-766/data-layer',
+      to: '/docs/shared/stahlwille/data-layer',
     },
     {
       title: 'Licensing & Activation',
       description: 'Information about licensing, activation, and compliance.',
-      to: '/docs/stahlwille-766/licensing',
+      to: '/docs/shared/stahlwille/licensing',
     },
     {
       title: 'Troubleshooting',
       description: 'Common issues, solutions, and diagnostic procedures.',
-      to: '/docs/stahlwille-766/troubleshooting',
+      to: '/docs/shared/stahlwille/troubleshooting',
     },
   ];
   return (
