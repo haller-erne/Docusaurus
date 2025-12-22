@@ -17,12 +17,12 @@ A comprehensive solution for integrating Stahlwille 766 WiFi torque wrenches wit
 - Secure snap package deployment
 - Multi-architecture support (AMD64/ARM64)
 
-**Documentation:** [Stahlwille 766 App User Guide](./stahlwille-766/user-guide.md)
+**Documentation:** [Stahlwille 766 App User Guide](./shared/stahlwille/user-guide.md)
 
 ### Opex Solution
 *Coming Soon* - Industrial optimization and efficiency monitoring solution for ctrlX CORE.
 
-**Documentation:** [Opex Documentation](./opex/overview.md) *(In Development)*
+**Documentation:** [Opex Documentation](./shared/opex/overview.md) *(In Development)*
 
 ## Product Documentation Structure
 

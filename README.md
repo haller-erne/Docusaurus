@@ -16,7 +16,7 @@ Complete solution for integrating Stahlwille 766 WiFi torque wrenches with ctrlX
 - ctrlX DataLayer integration for PLC connectivity
 - Secure snap package deployment
 
-**Documentation:** [View User Guide →](docs/stahlwille-766/user-guide.md)
+**Documentation:** [View User Guide →](docs/shared/stahlwille/user-guide.md)
 
 ### Opex Solution *(Coming Soon)*
 Industrial optimization and efficiency monitoring solution for ctrlX CORE.

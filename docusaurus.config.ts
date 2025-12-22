@@ -109,17 +109,17 @@ const config: Config = {
         {
           title: 'Stahlwille 766 App',
           items: [
-            {label: 'User Guide', to: '/docs/stahlwille-766/user-guide'},
-            {label: 'Installation', to: '/docs/stahlwille-766/installation'},
-            {label: 'Configuration', to: '/docs/stahlwille-766/configuration'},
-            {label: 'Troubleshooting', to: '/docs/stahlwille-766/troubleshooting'},
+            {label: 'User Guide', to: '/docs/shared/stahlwille/user-guide'},
+            {label: 'Installation', to: '/docs/shared/stahlwille/installation'},
+            {label: 'Configuration', to: '/docs/shared/stahlwille/configuration'},
+            {label: 'Troubleshooting', to: '/docs/shared/stahlwille/troubleshooting'},
           ],
         },
         {
           title: 'Products',
           items: [
-            {label: 'Stahlwille 766 Integration', to: '/docs/stahlwille-766/user-guide'},
-            {label: 'Opex Solution', to: '/docs/opex/opex-overview'},
+            {label: 'Stahlwille 766 Integration', to: '/docs/shared/stahlwille/user-guide'},
+            {label: 'Opex Solution', to: '/docs/shared/opex/overview'},
           ],
         },
         {
