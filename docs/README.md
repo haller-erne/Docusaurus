@@ -22,7 +22,7 @@ A comprehensive solution for integrating Stahlwille 766 WiFi torque wrenches wit
 ### Opex Solution
 *Coming Soon* - Industrial optimization and efficiency monitoring solution for ctrlX CORE.
 
-**Documentation:** [Opex Documentation](./shared/opex/overview.md) *(In Development)*
+**Documentation:** [Opex Documentation](./shared/opex-gwk/overview.md) *(In Development)*
 
 ## Product Documentation Structure
 

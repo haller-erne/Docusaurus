@@ -119,7 +119,7 @@ const config: Config = {
           title: 'Products',
           items: [
             {label: 'Stahlwille 766 Integration', to: '/docs/shared/stahlwille/user-guide'},
-            {label: 'Opex Solution', to: '/docs/shared/opex/overview'},
+            {label: 'Opex Solution', to: '/docs/shared/opex-gwk/overview'},
           ],
         },
         {

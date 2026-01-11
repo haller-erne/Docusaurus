@@ -33,7 +33,7 @@ function Hero() {
             <Link className="button button--secondary button--lg" style={{fontWeight:600}} to="/docs/shared/stahlwille/user-guide">
               Stahlwille 766 App
             </Link>
-            <Link className="button button--outline button--lg" to="/docs/shared/opex/overview">
+            <Link className="button button--outline button--lg" to="/docs/shared/opex-gwk/overview">
               Opex Solution
             </Link>
           </div>
@@ -86,7 +86,7 @@ function FeaturedProducts() {
                 Currently in development with advanced analytics and reporting capabilities.
               </p>
               <div style={{display:'flex', gap:'0.75rem', flexWrap:'wrap', marginTop:'auto'}}>
-                <Link className="button button--outline button--md" to="/docs/shared/opex/overview">Learn More</Link>
+                <Link className="button button--outline button--md" to="/docs/shared/opex-gwk/overview">Learn More</Link>
                 <span className="badge badge--secondary" style={{alignSelf: 'center'}}>Coming Soon</span>
               </div>
             </div>
