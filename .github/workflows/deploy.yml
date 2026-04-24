@@ -3,17 +3,28 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout (with submodules)
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          submodules: recursive
+          # Submodule .gitmodules points to the public GitHub mirror
+          # (MaherMakerHallerErne/Ctrlx-Shared-Docs). No token needed for public repos.
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -29,12 +40,9 @@ jobs:
           path: ./build
 
   deploy:
-    if: github.ref == 'refs/heads/main'
+    name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
