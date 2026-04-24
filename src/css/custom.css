@@ -40,3 +40,8 @@
   --ifm-button-border-color: var(--ifm-color-primary-dark);
   background-color: transparent;
 }
+
+/* Fix anchor scroll offset for sticky navbar */
+html {
+  scroll-padding-top: calc(var(--ifm-navbar-height) + 0.5rem);
+}
