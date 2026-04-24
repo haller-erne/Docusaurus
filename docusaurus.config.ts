@@ -1,6 +1,8 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -26,7 +28,6 @@ const config: Config = {
   projectName: 'Docusaurus', // Usually your repo name.
 
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -35,6 +36,15 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+
+  stylesheets: [
+    {
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css',
+      type: 'text/css',
+      integrity: 'sha384-nB0miv6/jRmo5ULSR2KuILx0daez8e6jB/+mULCbDIqV6Gm6BO/ZoEPFzT5ltRi',
+      crossorigin: 'anonymous',
+    },
+  ],
 
   presets: [
     [
@@ -46,6 +56,8 @@ const config: Config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/haller-erne/Docusaurus/tree/main/',
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
         },
         blog: false, // Disable blog since we removed it
         theme: {
@@ -60,9 +72,28 @@ const config: Config = {
   // Enable Mermaid code blocks
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
   },
 
+  clientModules: [
+    './src/clientModules/scrollToHash.js',
+  ],
+
   plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'ogs',
+        path: 'ogs-docs',
+        routeBasePath: 'ogs',
+        sidebarPath: './sidebarsOgs.ts',
+        editUrl: 'https://github.com/haller-erne/Docusaurus/tree/main/',
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
+      },
+    ],
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
@@ -72,12 +103,13 @@ const config: Config = {
         explicitSearchResultPath: true,
         searchResultLimits: 8,
         searchResultContextMaxLength: 50,
-        docsRouteBasePath: '/docs',
+        docsRouteBasePath: ['/docs', '/ogs'],
         indexDocs: true,
         indexBlog: false,
         indexPages: true,
       },
     ],
+    'docusaurus-plugin-image-zoom',
   ],
 
   themeConfig: {
@@ -95,6 +127,12 @@ const config: Config = {
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Documentation',
+        },
+        {
+          to: '/ogs/',
+          label: 'OGS Docs',
+          position: 'left',
+          activeBaseRegex: '/ogs/',
         },
         {
           href: 'https://github.com/haller-erne/Docusaurus',
@@ -134,6 +172,14 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: ['lua', 'json', 'bash', 'ini', 'toml', 'csharp'],
+    },
+    zoom: {
+      selector: '.markdown img',
+      background: {
+        light: 'rgb(255, 255, 255)',
+        dark: 'rgb(50, 50, 50)',
+      },
     },
   } satisfies Preset.ThemeConfig,
 };
