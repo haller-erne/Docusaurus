@@ -58,4 +58,4 @@ The application maintains a list of recent connections. When you successfully co
 | Test scripts | `%APPDATA%\Haller + Erne GmbH\heOPTester\Tests\` | Lua test files |
 | Test metadata | Same as scripts (`.lua.meta` files) | Run history, tags |
 | LSP binary | `<install dir>\tools\lua-language-server\bin\` | Lua diagnostics |
-| License file | User-selected location | `.lic` file |
+| License file | `C:\ProgramData\Haller + Erne GmbH\Licensing\OPTester.lic` | License activation |
