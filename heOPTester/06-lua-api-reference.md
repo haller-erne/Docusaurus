@@ -37,7 +37,49 @@ Complete API reference for the three global objects available in Lua test script
 |----------|------------|-------------|
 | `SendMid(midNumber)` | `number` | Send MID with empty body |
 | `SendMid(midNumber, fields)` | `number, table` | Send MID with body fields |
+| `SendMid(midNumber, fields, headerOverrides)` | `number, table?, table` | Send MID with body fields and per-call header overrides |
 | `SendRaw(payload)` | `string` | Send raw ASCII (NUL appended automatically) |
+
+### Header Control
+
+Control header fields sent with `SendMid()`. By default, `SendMid` uses revision=1 and zeros for all other fields.
+
+| Function | Parameters | Description |
+|----------|------------|-------------|
+| `SetHeader(fields)` | `table` | Set persistent header defaults for all subsequent `SendMid` calls |
+| `SetHeader(nil)` | — | Clear all persistent header defaults |
+| `GetHeader()` | — | Returns table with current persistent header defaults |
+| `ClearHeader()` | — | Clear all persistent header defaults |
+
+**Controllable fields** (all optional):
+
+| Field | Type | Default | Description |
+|-------|------|---------|-------------|
+| `revision` | number | 1 | MID revision number |
+| `station` | string | `"00"` | Station ID |
+| `spindle` | string | `"00"` | Spindle ID |
+| `sequence` | string | `"00"` | Message sequence number |
+| `noAck` | number | 0 | No-acknowledge flag (0 or 1) |
+| `partCount` | string | `"0"` | Part count |
+| `partNumber` | string | `"0"` | Part number |
+
+**Precedence**: per-call overrides > persistent defaults > built-in defaults.
+
+**Example:**
+```lua
+-- Set defaults once
+session:SetHeader({ revision = 3, station = "01", spindle = "02" })
+
+-- All SendMid calls now use rev 3, station 01, spindle 02
+session:SendMid(10)
+session:SendMid(60, { torqueMin = "100" })
+
+-- Override revision for just this call (station/spindle still from SetHeader)
+session:SendMid(8, nil, { revision = 999 })
+
+-- Clear when done
+session:ClearHeader()
+```
 
 ### Receiving
 

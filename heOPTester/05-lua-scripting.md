@@ -114,6 +114,28 @@ session:SendMid(38)                     -- send MID 0038 with empty body
 session:SendMid(38, { jobId = 12 })     -- send with body fields
 ```
 
+### With Header Control
+
+By default, `SendMid` uses revision 1 and default header values. You can customize header fields:
+
+```lua
+-- Set persistent defaults for all subsequent sends
+session:SetHeader({ revision = 3, station = "01", spindle = "02" })
+
+session:SendMid(10)     -- uses revision 3, station 01, spindle 02
+
+-- Per-call override (takes precedence over persistent defaults)
+session:SendMid(10, nil, { revision = 1 })   -- revision 1, but station/spindle from SetHeader
+
+-- Body fields AND header overrides together
+session:SendMid(18, { ParameterSetId = "001" }, { revision = 1, noAck = 1 })
+
+-- Clear persistent defaults (back to built-in: revision=1, station=00, ...)
+session:ClearHeader()
+```
+
+Available header fields: `revision`, `station`, `spindle`, `sequence`, `noAck`, `partCount`, `partNumber`.
+
 ### Raw ASCII
 
 ```lua
