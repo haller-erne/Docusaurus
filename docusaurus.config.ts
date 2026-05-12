@@ -95,6 +95,18 @@ const config: Config = {
       },
     ],
     [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'heoptester',
+        path: 'heOPTester',
+        routeBasePath: 'heoptester',
+        sidebarPath: './sidebarsHeOPTester.ts',
+        editUrl: 'https://github.com/haller-erne/Docusaurus/tree/main/',
+        remarkPlugins: [remarkMath],
+        rehypePlugins: [rehypeKatex],
+      },
+    ],
+    [
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
         hashed: true,
@@ -103,7 +115,7 @@ const config: Config = {
         explicitSearchResultPath: true,
         searchResultLimits: 8,
         searchResultContextMaxLength: 50,
-        docsRouteBasePath: ['/docs', '/ogs'],
+        docsRouteBasePath: ['/docs', '/ogs', '/heoptester'],
         indexDocs: true,
         indexBlog: false,
         indexPages: true,
@@ -135,6 +147,12 @@ const config: Config = {
           activeBaseRegex: '/ogs/',
         },
         {
+          to: '/heoptester/',
+          label: 'OP Tester',
+          position: 'left',
+          activeBaseRegex: '/heoptester/',
+        },
+        {
           href: 'https://github.com/haller-erne/Docusaurus',
           label: 'GitHub',
           position: 'right',
@@ -158,6 +176,7 @@ const config: Config = {
           items: [
             {label: 'Stahlwille 766 Integration', to: '/docs/shared/stahlwille/user-guide'},
             {label: 'Opex Solution', to: '/docs/shared/opex-gwk/overview'},
+            {label: 'OpenProtocol Tester', to: '/heoptester/'},
           ],
         },
         {
