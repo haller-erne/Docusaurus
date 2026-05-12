@@ -97,13 +97,7 @@ The editor features:
 
 ### LSP Setup
 
-The editor uses **lua-language-server** for real-time diagnostics. To install:
-
-```powershell
-.\scripts\install-lua-ls.ps1
-```
-
-This downloads the server binary to `OpenProtocol.WinForms/tools/lua-language-server/bin/`. Without it, the editor works but without real-time error checking.
+The editor uses **lua-language-server** for real-time diagnostics. The language server is installed automatically by the application installer — no manual setup is required.
 
 ## Running Tests
 

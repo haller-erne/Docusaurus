@@ -91,12 +91,9 @@ end
 
 ### LSP diagnostics not working
 
-**Cause**: lua-language-server binary not installed.
+**Cause**: lua-language-server binary missing or corrupted.
 
-**Solution**:
-```powershell
-.\scripts\install-lua-ls.ps1
-```
+**Solution**: Reinstall the application — the installer automatically deploys the language server.
 
 Then restart the Test Suites window.
 
