@@ -7,8 +7,8 @@ import rehypeKatex from 'rehype-katex';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Haller + Erne ctrlX Solutions',
-  tagline: 'Documentation for ctrlX CORE Integration Solutions',
+  title: 'Haller + Erne Documentation',
+  tagline: 'Product documentation, guides, and developer resources',
   favicon: 'img/He logo.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -128,9 +128,9 @@ const config: Config = {
     // Replace with your project's social card
   image: 'img/He logo.png',
     navbar: {
-      title: 'Haller + Erne ctrlX Solutions',
+      title: 'Haller + Erne Documentation',
       logo: {
-        alt: 'Haller + Erne ctrlX Solutions Logo',
+        alt: 'Haller + Erne Logo',
         src: 'img/He logo.png',
       },
       items: [
@@ -186,7 +186,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} Haller + Erne ctrlX Solutions Documentation`,
+      copyright: `© ${new Date().getFullYear()} Haller + Erne GmbH — Documentation`,
     },
     prism: {
       theme: prismThemes.github,
