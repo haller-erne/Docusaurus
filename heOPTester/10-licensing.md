@@ -32,6 +32,12 @@ The reminder dialog shows:
 3. The application validates the license immediately
 4. If valid, demo mode is deactivated and all features are unlocked
 
+The license is stored at:
+
+```
+C:\ProgramData\Haller + Erne GmbH\Licensing\OPTester.lic
+```
+
 <!-- SCREENSHOT: Load License File dialog -->
 ![Load License](screenshots/load-license.png)
 
