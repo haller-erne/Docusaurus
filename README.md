@@ -18,15 +18,16 @@ Complete solution for integrating Stahlwille 766 WiFi torque wrenches with ctrlX
 
 **Documentation:** [View User Guide →](docs/shared/stahlwille/user-guide.md)
 
-### Opex Solution *(Coming Soon)*
-Industrial optimization and efficiency monitoring solution for ctrlX CORE.
+### GWK Operator App
+Integrate GWK Operator tools with ctrlX CORE — dashboard widget, Data Layer control, and result reporting.
 
-**Planned Features:**
-- Performance optimization monitoring
-- Efficiency analytics and reporting
-- Advanced reporting and insights
+**Features:**
+- OPEX protocol tool integration
+- Real-time dashboard widget
+- Data Layer control and status
+- Output curve posting
 
-**Documentation:** [Learn More →](docs/opex/overview.md)
+**Documentation:** [View User Guide →](docs/shared/opex-gwk/user-guide.md)
 
 ## 📚 What's Included
 

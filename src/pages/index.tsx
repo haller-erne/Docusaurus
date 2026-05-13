@@ -99,7 +99,6 @@ function Products() {
                 border: '1px solid #e5e7eb',
                 boxShadow: '0 2px 6px rgba(0,0,0,0.04)',
                 height: '100%',
-                ...(p.badge === 'Coming Soon' ? {opacity: 0.7} : {}),
               }}>
               <div
                 className="card__body"

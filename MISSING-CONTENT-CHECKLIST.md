@@ -24,7 +24,7 @@ These files have `<!-- TODO: Update screenshot for OPEX-GWK -->` markers indicat
 
 ## Opex-GWK: Content Review
 
-- [ ] **overview.md** — Contains only "Coming Soon" placeholder. Needs actual product overview content.
+- [x] **overview.md** — Merged into `user-guide.md`. Overview page removed from sidebar.
 
 ## heOPTester: All Screenshots Present ✅
 
