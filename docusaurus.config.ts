@@ -138,7 +138,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Documentation',
+          label: 'ctrlX Apps',
         },
         {
           to: '/ogs/',
