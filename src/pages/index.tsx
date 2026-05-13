@@ -61,7 +61,7 @@ const products: ProductCard[] = [
     title: 'GWK Operator App',
     description:
       'Integrate GWK Operator tools with ctrlX CORE. Dashboard widget, Data Layer control, and result reporting.',
-    to: '/docs/shared/opex-gwk/overview',
+    to: '/docs/shared/opex-gwk/user-guide',
     buttonLabel: 'Learn More',
     icon: '📊',
   },

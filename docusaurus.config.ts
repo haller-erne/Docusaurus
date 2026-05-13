@@ -178,7 +178,7 @@ const config: Config = {
           title: 'Products',
           items: [
             {label: 'Stahlwille 766 Integration', to: '/docs/shared/stahlwille/user-guide'},
-            {label: 'GWK Operator App', to: '/docs/shared/opex-gwk/overview'},
+            {label: 'GWK Operator App', to: '/docs/shared/opex-gwk/user-guide'},
             {label: 'OpenProtocol Tester', to: '/heoptester/'},
           ],
         },
