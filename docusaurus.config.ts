@@ -52,10 +52,13 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/haller-erne/Docusaurus/tree/main/',
+          editUrl: ({docPath}) => {
+            if (docPath.startsWith('shared/')) {
+              // Submodule content — link to the shared-docs repo
+              return `https://github.com/MaherMakerHallerErne/Ctrlx-Shared-Docs/edit/main/${docPath.replace('shared/', '')}`;
+            }
+            return `https://github.com/haller-erne/Docusaurus/edit/main/docs/${docPath}`;
+          },
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
         },
