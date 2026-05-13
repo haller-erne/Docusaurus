@@ -34,11 +34,11 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Opex Solution',
+      label: 'GWK Operator App',
       collapsed: true,
-      link: {type: 'doc', id: 'shared/opex-gwk/overview'},
+      link: {type: 'doc', id: 'shared/opex-gwk/user-guide'},
       items: [
-        {type: 'doc', id: 'shared/opex-gwk/user-guide', label: 'User Guide'},
+        {type: 'doc', id: 'shared/opex-gwk/overview', label: 'Overview'},
         {type: 'doc', id: 'shared/opex-gwk/installation', label: 'Installation'},
         {type: 'doc', id: 'shared/opex-gwk/configuration', label: 'Configuration'},
         {type: 'doc', id: 'shared/opex-gwk/applying-changes', label: 'Applying Changes'},
