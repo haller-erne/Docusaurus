@@ -58,12 +58,11 @@ const products: ProductCard[] = [
     icon: '🔧',
   },
   {
-    title: 'Opex Solution',
+    title: 'GWK Operator App',
     description:
-      'Industrial optimization and efficiency monitoring for ctrlX CORE with advanced analytics and reporting.',
+      'Integrate GWK Operator tools with ctrlX CORE. Dashboard widget, Data Layer control, and result reporting.',
     to: '/docs/shared/opex-gwk/overview',
     buttonLabel: 'Learn More',
-    badge: 'Coming Soon',
     icon: '📊',
   },
   {
