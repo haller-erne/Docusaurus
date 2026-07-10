@@ -1,5 +1,6 @@
 ---
 title: Stahlwille Manoskop 766 WiFi Torque Wrench
+sidebar_label: Stahlwille Manoskop 766 WiFi
 tags:
     - tool
     - torque

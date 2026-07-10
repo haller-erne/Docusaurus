@@ -1,5 +1,6 @@
 ---
 title: Doga BM/BMH/BMT-series wireless tools
+sidebar_label: Doga BM-series
 tags:
     - tool
     - tightening
