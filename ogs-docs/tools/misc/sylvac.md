@@ -35,7 +35,7 @@ To provide Bluetooth connectivity for the Sylvac tools, the Sylvac BLE USB dongl
 - It ensures stable and encrypted communication, which is better for continuous or sensitive data logging.
 - Once paired, the caliper will only communicate with the paired device, reducing interference or accidental connections.
 
-![alt text](resources/Sylvac_Modes.png)
+<img style={{float: 'right', margin: '0 0 1rem 1rem'}} width="200" src={require('./resources/Sylvac_Modes.png').default} alt="Sylvac modes" />
 
 
 To connect the tool, please follow the steps below:
@@ -47,7 +47,7 @@ To connect the tool, please follow the steps below:
 
 ## Operation modes (favorites)
 
-![alt text](resources/sylvac-favorites.png)
+<img style={{float: 'right', margin: '0 0 1rem 1rem'}} width="200" src={require('./resources/sylvac-favorites.png').default} alt="Sylvac favorites" />
 
 The Sylvac tools can operate in different operation modes, where the function of the `DATA`-button can be defined as well as the bluetooth send behaviour:
 

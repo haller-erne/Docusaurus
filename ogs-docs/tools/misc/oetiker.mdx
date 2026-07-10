@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 # Oetiker EPC01 Electro-Pneumatic Pincer
 
-![Oetiker EPC01 Pincer](resources/oetiker-pincer-epc01.jpg)
+<img style={{float: 'right', margin: '0 0 1rem 1rem'}} src={require('./resources/oetiker-pincer-epc01.jpg').default} alt="Oetiker EPC01 Pincer" />
 The EPC 01 is a high quality pincer system developed by Oetiker. It ensures the uniform and reliable assembly of Oetiker clamps by providing verified and traceable connection installation and ensuring the highest quality standards through accurate and precise process control.
 
 It combines Electro-Pneumatic Controls and Trigger Units for the full range of environment - from test labs to fully automated high-volume production cells. A wide range of pincer body sizes and pincer heads allows for optimal adaption to any requirement.
@@ -123,7 +123,7 @@ The driver for the Oetiker EPC01 controller is automatically loaded.
 
 To load the Oetiker EPC01 controller driver, add `lua_tool_pincer_oetiker` to the `requires` table in the `config.lua` file in your project folder. Here is a sample `config.lua` file:
 
-```  lua hl_lines="7"
+```  lua {7}
 -- add the shared folder (..\shared)
 OGS.Project.AddPath('../shared')
 

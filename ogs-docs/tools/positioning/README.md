@@ -76,7 +76,7 @@ OGS provided lua files are referenced from a lib subfolder, to include the posit
 
 Adding it to the `requires` table in the projects `config.lua` will then look as follows:
 
-```  lua hl_lines="7"
+```  lua {7}
 -- add the shared folder (..\shared)
 OGS.Project.AddPath('../shared')
 
@@ -94,7 +94,7 @@ The `positioning.lua` file automatically scans the `[OPENPROTO]` section for `CH
 
 Here is a sample fragment on how to configure an OpenProtocol tool with the AR-Tracking driver (see [available drivers](#available-drivers) below and [ART SmartTrack](./positioning-art-dtrack.mdx) for detailed info):
 
-``` ini hl_lines="6"
+``` ini {6}
 [OPENPROTO]
 CHANNEL_01=192.168.1.42
 CHANNEL_01_TYPE=GWK
@@ -139,7 +139,7 @@ REFERENCE_TRACKER=Claw Target 21 Reference
 
 To add a positioning system to a LUA tool (see [LUA custom tools](/ogs/v3/lua/customtools/)), a slightly different syntax is needed. In this case, the `POSITIONING=<section>` must be added to the tools configuration section. Here is a sample:
 
-``` ini hl_lines="9"
+``` ini {9}
 [CHANNELS]
 1=LuaTool_MyTool
 

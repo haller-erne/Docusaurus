@@ -11,7 +11,7 @@ import TabItem from '@theme/TabItem';
 
 # ART-DTrack Positioning and Tool Tracking
 
-![ART DTrack](resources/DTrack3SplashScreen.png)
+<img style={{float: 'right', margin: '0 0 1rem 1rem'}} src={require('./resources/DTrack3SplashScreen.png').default} alt="ART DTrack" />
 [ART DTrack](https://ar-tracking.com/en/product-program/products-connection-software-dtrack) is a realtime high precision infrared camera based tool tracking system with support for passive and active markers. It can be flexibly used with different tool types and models (tightening, riveting, hand-tracking using gloves, etc.) due to the passive markers. It is used to implement a large range of applications and is able to cover large rooms. Scalability is available from plug-and-play pre-calibrated stereo cameras (`SmartTrack`) for a quick start in typical single-user assembly stations up to large multi-camera setups for covering huge areas. OGS provides a deep integration including teaching positions and setting tolerance definitions directly from within the OGS gui. It also supports advanced positioning deatures like multi-tool tracking, angle deviation checking and realtime coordinate tracking view), so there is typically no need to run a seperate application to configure the system.
 
 :::note
@@ -184,7 +184,7 @@ To load the tool tracking support, include the `positioning.lua` file in your pr
 
 Adding it to the `requires` table in the projects `config.lua` will then look as follows:
 
-```  lua hl_lines="7"
+```  lua {7}
 -- add the shared folder (..\shared)
 OGS.Project.AddPath('../shared')
 

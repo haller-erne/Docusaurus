@@ -121,7 +121,7 @@ MyProject/
 
 As described in [OGS positioning overview](README.md#workflow-configuration), include `lib.positioning` in your `config.lua`. The ROBOT driver additionally needs the station I/O module for reading sensors, and optionally the URDF viewer:
 
-``` lua hl_lines="4 5 6"
+``` lua {4,5,6}
 OGS.Project.AddPath('../shared')
 
 requires = {

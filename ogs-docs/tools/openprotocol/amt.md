@@ -21,7 +21,7 @@ This page describes the specifics for configuring the AMT/EST SX wifi battery to
 
 ## Overview
 
-![AMT tightening tools](resources/amt-tools.png)
+<img style={{float: 'right', margin: '0 0 1rem 1rem'}} width="300" src={require('./resources/amt-tools.png').default} alt="AMT tightening tools" />
 The [AMT SX family of tightening tools from EST](https://amt.schmidgruppe.de/de/produkte/amt/schraubtechnik/akku-werkzeuge-hsxb.html) provide optimized ergonomic design and lightweight configuration to reduce operator strain. This leads to an increase in individual productivity and, as a result, a reduction in running production costs. The tools feature a build-in controller with web access for easy integration into a wifi infrastructure and stand-alone operation. The web server provides all functions needed for setting up, configuring, diagnostics and for monitoring the tools operation.
 
 To access the configuration, open a web browser and connect it to the tools IP address (hint: press and hold the acknowledge button right next to the display until the text `Maintainence` is shown, then use the up/down buttons to the left of the display to scroll to the wifi menu to readout the current connection settings or to enable the internal wifi access point - the SSID is `xSXSBW_<sn>` with password `schrauber`). To initially configure the tool (before wifi is configured), remove the battery and connect a PC to the `CPU` port using a Micro-USB cable - this will load a new RNDIS USB network interface and allows connecting to the tool at the predefined IP address 192.168.252.33 (default user: admin/admin, amt/amt).

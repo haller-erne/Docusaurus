@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 # Wenglor weQube Smart Camera
 
-![IV4 camera](resources/wenglor-weqube-b50.png)
+<img style={{float: 'right', margin: '0 0 1rem 1rem'}} src={require('./resources/wenglor-weqube-b50.png').default} alt="Wenglor weQube Smart Camera" />
 The Wenglor weQube B50 is available as a smart camera, vision sensor and OCR reader and solves a wide range of industrial image processing tasks in real time. The highly modular hardware platforms in combination with high-performance machine vision software enable tailored adjustment for all machine vision applications. You can find more details on the [Wenglor weQube B50 product page](https://www.wenglor.com/en/Machine-Vision/Smart-Cameras-and-Vision-Sensors/weQube-B50/c/cxmCID221376).
 
 OGS controls the camera over the integrated EtherNet/IP interface. 
@@ -208,7 +208,7 @@ The driver for the camera is automatically loaded.
 
 To load the camera driver, add `lua_tool_camera_wenglor` to the `requires` table in the `config.lua` file in your project folder. Here is a sample `config.lua` file:
 
-```  lua hl_lines="7"
+```  lua {7}
 -- add the shared folder (..\shared)
 OGS.Project.AddPath('../shared')
 
