@@ -121,7 +121,6 @@ const sidebars: SidebarsConfig = {
         {type: 'doc', id: 'appnotes/debugging', label: 'Debugging LUA Scripts'},
         {type: 'doc', id: 'appnotes/station_io', label: 'Station IO'},
         {type: 'doc', id: 'appnotes/firebird-security', label: 'Firebird SQL configuration'},
-        {type: 'doc', id: 'appnotes/branding', label: 'Branding'},
         {
           type: 'category',
           label: 'Using BLE Gateways',
