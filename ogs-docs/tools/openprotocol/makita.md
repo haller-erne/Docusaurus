@@ -6,6 +6,7 @@ tags:
     - openprotocol
 
 
+
 ---
 
 # Makita DFT/DFL wifi battery clutch tool

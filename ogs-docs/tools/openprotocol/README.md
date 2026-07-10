@@ -8,11 +8,11 @@ OGS supports connecting tools with `OpenProtocol` interface. As tools differ in 
 - Rexroth CS351 and KE350 system tools (for more information, see [KE350 OpenProtocol](sys350-ke350.md) and [CS351 OpenProtocol](sys350-cs351.md))
 - Rexroth OPEXplus (for more information, see [OPEXplus OpenProtocol](opexplus.md))
 - GWK Operator+ torque wrenches (for more information, see [GWK Operator+ OpenProtocol](./gwk.md))
-- Crane TCI torque wrenches (for more information, see [Crane OpenProtocol](./crane.md))
-- Gehmeyr Exact Wifi tools (for more information, see [Gehmeyr OpenProtocol](./gehmeyr.md))
 - Sturtevant Richmont Global 400 MP connected Exacta 2 digital torque wrenches (for more information, see [Sturtevant Richmond OpenProtocol](./sturtevant.md))
 - HS-Technik riveting tool
 - AMT/EST SX series wifi battery tools (for more information, see [AMT/EST SX wifi battery tools](./amt.md))
+- Atlas Copco MicroTorque tools (for more information, see [Atlas Copco MicroTorque tools](./mtc.md))
+- Atlas Copco PF6000/PF8 controllers and ITB wifi tools with integrated controller (for more information, see [Atlas Copco PF6000/8 tools](./pf6-pf8.md))
 
 The overall configuration for these tools is similar and the actual driver has the same set of configuration parameters - described on this page.
 
@@ -33,6 +33,8 @@ The supported tool types and vendor codes are:
 | BTC | BTC | HS-Technik | NutBee riveting tool |
 | ATG | ATG | Cleco | Cleco wifi battery tool |
 | AMT | AMT | AMT/EST | AMT/EST SX series wifi battery tool |
+| MTC | AAA | Atlas Copco | MicroTorque tools |
+| PF6000 | ACT | Atlas Copco | PF6000/PF8 controllers and ITB wifi tools with integrated controller |
 
 ## Installation
 

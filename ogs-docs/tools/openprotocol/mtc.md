@@ -1,11 +1,12 @@
 ---
-id: mtc
 name: Atlas Copco MicroTorque tools
 title: Atlas Copco MicroTorque tools
 tags:
     - tool
     - tightening
     - openprotocol
+
+
 ---
 
 # Atlas Copco MicroTorque tools
@@ -85,27 +86,35 @@ The Nexo tools can operate in manual or automatic mode. For OGS to be able to co
 
 The mode must be setup as follows:
 
-=== "Nexo 2"
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-    ![alt text](resources/nexo2-mode-simple.png)
+<Tabs>
+  <TabItem value="nexo-2" label="Nexo 2">
 
-    The relevant settings are:
+![alt text](resources/nexo2-mode-simple.png)
 
-    - `ID code source`: must be set to OpenProtocol, so OGS can send the ID
-    - `Operation mode settings`: set operation mode to `auto`
+The relevant settings are:
 
-    Make sure the set the `active column` to `A`!
+- `ID code source`: must be set to OpenProtocol, so OGS can send the ID
+- `Operation mode settings`: set operation mode to `auto`
 
-=== "Nexo"
+Make sure the set the `active column` to `A`!
 
-    ![alt text](resources/nexo-mode-simple.png)
+  </TabItem>
+  <TabItem value="nexo" label="Nexo">
 
-    The relevant settings are:
+![alt text](resources/nexo-mode-simple.png)
 
-    - `ID code source`: must be set to OpenProtocol, so OGS can send the ID
-    - `Operation mode settings`: set operation mode to `auto`
+The relevant settings are:
 
-    Make sure the set the `active column` to `A`!
+- `ID code source`: must be set to OpenProtocol, so OGS can send the ID
+- `Operation mode settings`: set operation mode to `auto`
+
+Make sure the set the `active column` to `A`!
+
+  </TabItem>
+</Tabs>
 
 ### OpenProtocol configuration
 
@@ -113,28 +122,38 @@ The mode must be setup as follows:
 
 As OGS needs OpenProtocol to control the tool, the OpenProtocol (Data -> OpenProtocol) must be configured as follows:
 
-=== "Nexo 2"
+<Tabs>
+  <TabItem value="nexo-2" label="Nexo 2">
 
-    ![alt text](resources/nexo2-openprotocol.png)
+![alt text](resources/nexo2-openprotocol.png)
 
-=== "Nexo"
+  </TabItem>
+  <TabItem value="nexo" label="Nexo">
 
-    ![alt text](resources/nexo-openprotocol.png)
+![alt text](resources/nexo-openprotocol.png)
+
+  </TabItem>
+</Tabs>
 
 
 #### Setup PLC signals
 
 To allow controlling the tool correctly, the PLC signals should be set up as follows:
 
-=== "Nexo 2"
+<Tabs>
+  <TabItem value="nexo-2" label="Nexo 2">
 
-    ![alt text](resources/nexo2-plc-table-1.png)
-    ![alt text](resources/nexo2-plc-table-2.png)
+![alt text](resources/nexo2-plc-table-1.png)
+![alt text](resources/nexo2-plc-table-2.png)
 
-=== "Nexo"
+  </TabItem>
+  <TabItem value="nexo" label="Nexo">
 
-    ![alt text](resources/nexo-plc-table-1.png)
-    ![alt text](resources/nexo-plc-table-2.png)
+![alt text](resources/nexo-plc-table-1.png)
+![alt text](resources/nexo-plc-table-2.png)
+
+  </TabItem>
+</Tabs>
 
 Important:
 - Never assign signal `En` to opctrl input 3.0 – this may enable the tool without
@@ -176,10 +195,17 @@ To make the tools send out data and curves (`Traceability` data) to backend data
 To send data out to a central Sys3xxGateway/QualityR server, typically the following options are possible:
 
 1. (preferred) Use the “Standard Nexo” data output with the http transfer option. 
-    By default this transmits all step data and tightening curves
+
+```
+By default this transmits all step data and tightening curves
+```
+
 2. Use the “Standard Nexo” data output with the http transfer option. 
-    By default this also transmits all step data and tightening curves, but sometimes causes troubles with the network infrastructure (firewall transversal,
-    transmission of plaintext passwords).
+
+```
+By default this also transmits all step data and tightening curves, but sometimes causes troubles with the network infrastructure (firewall transversal,
+transmission of plaintext passwords).
+```
 
 The “Standard Nexo” data output with http transfer is the preferred option, else
 use “Standard Nexo” with FTP.

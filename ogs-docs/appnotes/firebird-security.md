@@ -89,19 +89,25 @@ AutoAdminImplementationMapping USING PLUGIN Win_Sspi FROM Predefined_Group 'DOMA
 SQL> exit;
 ```
 
-!!! info Local attachment
+:::info[Local attachment]
 
-    The security is only enforced in server mode (i.e. over TCP connections to the database). A local server admin can always
-    shutdown the Firebird windows service and access the database 
-    using direct attach mode (if the file ACL allows it):
+The security is only enforced in server mode (i.e. over TCP connections to the database). A local server admin can always
+shutdown the Firebird windows service and access the database 
+using direct attach mode (if the file ACL allows it):
 
-        > isql -u SYSDBA -p [password] employee.fdb
+```
+> isql -u SYSDBA -p [password] employee.fdb
+```
 
-    (note `employee.fdb` instead of `127.0.0.1:employee.fdb`)
+(note `employee.fdb` instead of `127.0.0.1:employee.fdb`)
 
-!!! note Object rights and user mapping
+:::
 
-    Even though Windows Administrators now have full access to the databases, this does not mean there is a mapping for the database objects. E.g. `select * from <table>` in employee.fdb will fail, as there the admin user does not exist as a user and therefore does not have select rights on the `<table>`. To modify, add the user or map to a user.
+:::note[Object rights and user mapping]
+
+Even though Windows Administrators now have full access to the databases, this does not mean there is a mapping for the database objects. E.g. `select * from <table>` in employee.fdb will fail, as there the admin user does not exist as a user and therefore does not have select rights on the `<table>`. To modify, add the user or map to a user.
+
+:::
 
 ### Step 2: Define users and mappings
 
@@ -145,47 +151,55 @@ create mapping heOpCfg_monitor_role using plugin win_sspi from group "QUALITYR\h
 
 ??? note "🎬 Test login!"
 
-    Try running a command shell using the Windows logon for any user which is a member of the "QUALITYR\heOpCfg_editor" group.
+```
+Try running a command shell using the Windows logon for any user which is a member of the "QUALITYR\heOpCfg_editor" group.
 
-        > runas /noprofile /user:ogs_editor cmd.exe 
+    > runas /noprofile /user:ogs_editor cmd.exe 
 
-    This will open a new command window with the given users login token and groups (you can check by running `whoami /groups`). Now execute `isql` as follows to see the effective user and role:
+This will open a new command window with the given users login token and groups (you can check by running `whoami /groups`). Now execute `isql` as follows to see the effective user and role:
 
-        [ogs_editor]> isql -tr `<dbhost>:<dbname>`
+    [ogs_editor]> isql -tr `<dbhost>:<dbname>`
 
-    The expected output is:
+The expected output is:
 
-        C:\Program Files\Firebird\Firebird_4_0>isql -tr 127.0.0.1:test01
-        Database: 127.0.0.1:test01, User: PUBLIC, Role: DB_ROLE_WRITER
-        SQL>
+    C:\Program Files\Firebird\Firebird_4_0>isql -tr 127.0.0.1:test01
+    Database: 127.0.0.1:test01, User: PUBLIC, Role: DB_ROLE_WRITER
+    SQL>
 
-    To test, if the user can access the schema objects, run (in isql) a query:
+To test, if the user can access the schema objects, run (in isql) a query:
 
-        SQL> select part from part;
+    SQL> select part from part;
 
-    The expected output is:
+The expected output is:
 
-        SQL> select part from part;
+    SQL> select part from part;
 
-                    PART
-            ============
-                    59
-                    60
-                    ...
-        SQL>
+                PART
+        ============
+                59
+                60
+                ...
+    SQL>
+```
 
 
-    *Demo output varies. Your user mappings might differ from what's shown here.*
+```
+*Demo output varies. Your user mappings might differ from what's shown here.*
+```
 
 ### Step 3: Grant granular permissions to special roles
 
 If more granular priviledges are needed (other than the SYSTEM PRIVILEGES), then explicit grants can be used (e.g. for the `db_role_monitor` role). To do so, run the following in isql (see [Language Reference - Statements for Granting Privileges](https://firebirdsql.org/file/documentation/chunk/en/refdocs/fblangref50/fblangref50-security-granting.html)):
 
-    SQL> GRANT ALL ON TABLE xxx TO ROLE db_role_monitor;
+```
+SQL> GRANT ALL ON TABLE xxx TO ROLE db_role_monitor;
+```
 
 This is usually needed for the `db_role_monitor`, as the windows user running OGS might not be allowed to wirte to all database objects 8e.g. only to the result schema, not to the workflow definitions). Do this for all tables of the station database (`station.fds`) result schema:
 
-    total, archpart, transaktion, nutzer, limit, archaktion, archdesign, result, tool_position, station_runtime 
+```
+total, archpart, transaktion, nutzer, limit, archaktion, archdesign, result, tool_position, station_runtime 
+```
 
 ??? note "🎬 Copy & paste code"
 
@@ -266,12 +280,14 @@ allow alias access - i.e. only databases registered in [databases.conf](https://
 
 ??? note "🎬 3rd party info"
 
-    - [README.mapping.html](https://github.com/FirebirdSQL/firebird/blob/master/doc/sql.extensions/README.mapping.html)
-    - [Configuring trusted authentication](https://ib-aid.com/download/docs/fb4migrationguide.html#_configuring_trusted_authentication).
-    - [README.trusted_authentication](https://github.com/FirebirdSQL/firebird/blob/master/doc/README.trusted_authentication).
+```
+- [README.mapping.html](https://github.com/FirebirdSQL/firebird/blob/master/doc/sql.extensions/README.mapping.html)
+- [Configuring trusted authentication](https://ib-aid.com/download/docs/fb4migrationguide.html#_configuring_trusted_authentication).
+- [README.trusted_authentication](https://github.com/FirebirdSQL/firebird/blob/master/doc/README.trusted_authentication).
 
-    - [using GSEC to setup automatic admin mapping](https://www.firebirdsql.org/file/documentation/html/en/firebirddocs/gsec/firebird-gsec.html#gsec-interactive-admin-mapping)
-    - [LANGREF:auto admin mapping](https://www.firebirdsql.org/refdocs/langrefupd25-security-auto-admin-mapping.html).
+- [using GSEC to setup automatic admin mapping](https://www.firebirdsql.org/file/documentation/html/en/firebirddocs/gsec/firebird-gsec.html#gsec-interactive-admin-mapping)
+- [LANGREF:auto admin mapping](https://www.firebirdsql.org/refdocs/langrefupd25-security-auto-admin-mapping.html).
+```
 
 
 
@@ -281,30 +297,36 @@ allow alias access - i.e. only databases registered in [databases.conf](https://
 
 To map a AD user to SYSDBA, use the following:
 
-    create mapping trusted_ilie2 using plugin win_sspi from USER "`<domain>\<user>`" to USER "SYSDBA";
+```
+create mapping trusted_ilie2 using plugin win_sspi from USER "`<domain>\<user>`" to USER "SYSDBA";
+```
 
 ### isql in embedded mode
 
 If the firebird server service is stopped, then `isql` can be used in embedded mode. This is especially useful to fix
 issues in the security database (e.g. bad mapping). To access the security database, run isql as follows (you **must** use `SYSDBA` as user name):
 
-    isql security.fdb user SYSDBA
+```
+isql security.fdb user SYSDBA
+```
 
 for more details, see [README.security_database.txt](https://github.com/FirebirdSQL/firebird/blob/master/doc/README.security_database.txt).
 
-    1. Stop the Firebird server. Firebird caches connections to the security database aggressively. The presence
-    of server connections may prevent isql from establishing an embedded connection.
-    2. In a suitable shell, start an isql interactive session, opening the employee database via its alias:
-        > isql -user sysdba employee
-    3. Create the SYSDBA user:
-        WARNING! Do not just copy and paste! Generate your own strong password!
+```
+1. Stop the Firebird server. Firebird caches connections to the security database aggressively. The presence
+of server connections may prevent isql from establishing an embedded connection.
+2. In a suitable shell, start an isql interactive session, opening the employee database via its alias:
+    > isql -user sysdba employee
+3. Create the SYSDBA user:
+    WARNING! Do not just copy and paste! Generate your own strong password!
 
-        SQL> create user SYSDBA password 'StrongPassword';
-        SQL> exit;
+    SQL> create user SYSDBA password 'StrongPassword';
+    SQL> exit;
 
-        WARNING! Do not just copy and paste! Generate your own strong password!
+    WARNING! Do not just copy and paste! Generate your own strong password!
 
-    4. To complete the initialization, start the Firebird server again. Now you will be able to perform a network
-    login to databases using login SYSDBA and the password you assigned to it.
+4. To complete the initialization, start the Firebird server again. Now you will be able to perform a network
+login to databases using login SYSDBA and the password you assigned to it.
+```
 
 

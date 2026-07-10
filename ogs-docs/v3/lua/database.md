@@ -41,7 +41,7 @@ Driver=Firebird ODBC Driver;UID=SYSDBA;PWD=masterkey;DBNAME=C:\path\mydatabase.f
 
 To use a DSN, one must be created first. To do so, start the `ODBC-Datasources (32-Bit)` from the Windows start menu and create a new DSN: 
 
-![alt text](2026-01-31_18h02_29.png)
+![alt text](firebird-odbc-dsn.png)
 
 The connection string then is as follows:
 

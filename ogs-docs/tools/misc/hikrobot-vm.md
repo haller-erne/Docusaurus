@@ -1,10 +1,11 @@
 ---
-id: hikrobot-vm-tcp
 name: HikRobot VisionMaster TCP camera interface
 title: HikRobot VisionMaster TCP camera interface
 tags:
     - tool
     - camera
+
+
 ---
 
 # HikRobot VisionMaster TCP camera interface
@@ -13,6 +14,9 @@ tags:
 HikRobots VisionMaster is a machine vision software that is committed to providing customers with algorithm tools to quickly build vision applications and solve visual inspection problems. Can be used in various applications such as visual positioning, size measurement, defect detection, and information recognition. The software works with all HikRobot industrial cameras and provides a TCP based interface to connect to other systems (like OGS). You can find more details on the [HikRobot VisionMaster](https://www.hikrobotics.com/en/machinevision/visionmaster/).
 
 OGS controls the vision application over the TCP-interface provided by the VisionMaster software. 
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## Tool configuration
 
@@ -67,14 +71,15 @@ The parameters are:
 
 To load the driver, see below (OGS >= V3.1.10 ship the driver, so there is no need to load it manually anymore).
 
-=== ">= V3.1.10"
+<Tabs>
+  <TabItem value="ge-310" label=">= V3.1.10">
 
-    The driver for the camera is automatically loaded.
-    
+The driver for the camera is automatically loaded.
 
-=== "< V3.1.10"
+  </TabItem>
+  <TabItem value="lt-310" label="< V3.1.10">
 
-    To load the camera driver, add `lua_tool_camera_hikrobot_vm` to the `requires` table in the `config.lua` file in your project folder. Here is a sample `config.lua` file:
+To load the camera driver, add `lua_tool_camera_hikrobot_vm` to the `requires` table in the `config.lua` file in your project folder. Here is a sample `config.lua` file:
 
 ```  lua {7}
     -- add the shared folder (..\shared)
@@ -89,9 +94,12 @@ To load the driver, see below (OGS >= V3.1.10 ship the driver, so there is no ne
     current_project.billboard = 'http://127.0.0.1:60000/billboard.html'
     ```
 
-    1.  Add this line to include the `lua_tool_camera_hikrobot_vm.lua` driver in the project.
+```
+1.  Add this line to include the `lua_tool_camera_hikrobot_vm.lua` driver in the project.
+```
 
-
+  </TabItem>
+</Tabs>
 
 ## Editor configuration
 
@@ -117,15 +125,23 @@ There are two operations shown:
 - `Camera P2 (man. repeat)`: This adds a rework operation using a manual acknowledge button. If the main process (camera) reports NOK, then the manual acknowledge gets active, basically waiting for the operator to hit the button and repeat the camera measurement (or abort). This also gives the oerator a chance to look at the annotated camera result view (see the `url` task property set to the cameras result image webpage), fix the issue and hit the button to repeat. 
 - `Camera P1 (auto repeat)`: This only uses a main process (camera) tool. Therefore it will automatically repeat triggering the camera until it succeeds. Use this only in combination with a NOK retry counter - this can then e.g. try three times and then needs a supervisor to log in and complete.
 
-!!! hint 
+:::
 
-    Sometimes it can be useful to add a "pre-task" step or an additional task before the actual camera operation using an acknowledge button. This will give the operator some time (maybe also add some instruction text) to prepare the part under the camera - when he has everything ready, then hitting the buttonwill start the camera check.
+:::tip
 
-!!! hint 
+Sometimes it can be useful to add a "pre-task" step or an additional task before the actual camera operation using an acknowledge button. This will give the operator some time (maybe also add some instruction text) to prepare the part under the camera - when he has everything ready, then hitting the buttonwill start the camera check.
 
-    You can setup a task URL to show a webpage with the NOK result image. In this case, best is to set the task url to `currentimage.html` and write the current jobs image to disk using the parameter `DstPartImage` in the `[GENERAL]` section. Best is to also enable the webserver (as shown above).
+:::
 
-!!! hint 
+:::tip
 
-    If you want to capture the camera image, then add a `grabimage` tool task after the Keyence camera task. Set it up to grab the jpeg image from the cameras image URL and store it on disk (and upload to a data collection server). 
+You can setup a task URL to show a webpage with the NOK result image. In this case, best is to set the task url to `currentimage.html` and write the current jobs image to disk using the parameter `DstPartImage` in the `[GENERAL]` section. Best is to also enable the webserver (as shown above).
+
+:::
+
+:::tip
+
+If you want to capture the camera image, then add a `grabimage` tool task after the Keyence camera task. Set it up to grab the jpeg image from the cameras image URL and store it on disk (and upload to a data collection server). 
+
+:::
 

@@ -6,6 +6,7 @@ tags:
     - openprotocol
 
 
+
 ---
 
 # GWK Operator 22 and Operator+ electronic torque wrench

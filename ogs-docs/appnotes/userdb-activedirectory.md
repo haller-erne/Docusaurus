@@ -76,11 +76,12 @@ windows_default_auth=1
 
 ```
 
-!!! warning
+:::warning
 
-    Make sure to set ACLs which prevent non-administrative users to change files in the `<project>` folder (the folder where `station.ini`) is stored.
-    Not doing so will allow any user to disable/change the security related settings (and get higher priviledges as intended)!
-     
+Make sure to set ACLs which prevent non-administrative users to change files in the `<project>` folder (the folder where `station.ini`) is stored.
+Not doing so will allow any user to disable/change the security related settings (and get higher priviledges as intended)!
+
+:::
 
 ## Notes and hints
 

@@ -4,6 +4,7 @@ tags:
     - positioning
 
 
+
 ---
 
 # Tool Tracking and Positioning
@@ -137,7 +138,7 @@ IP=10.10.2.108
 REFERENCE_TRACKER=Claw Target 21 Reference
 ```
 
-To add a positioning system to a LUA tool (see [LUA custom tools](/ogs/v3/lua/customtools/)), a slightly different syntax is needed. In this case, the `POSITIONING=<section>` must be added to the tools configuration section. Here is a sample:
+To add a positioning system to a LUA tool (see [LUA custom tools](../../v3/lua/customtools.md)), a slightly different syntax is needed. In this case, the `POSITIONING=<section>` must be added to the tools configuration section. Here is a sample:
 
 ``` ini {9}
 [CHANNELS]
@@ -168,8 +169,8 @@ Currently, the following drivers are shipped with the OGS installer:
 - `ART`: Driver for the [AR-Tracking SmartTrack3 realtime tracking system](https://ar-tracking.com/en/product-program/smarttrack3), see [ART SmartTrack](./positioning-art-dtrack.mdx) for details.
 - `ROBOT`: Driver for URDF-based forward kinematics positioning using IO-Link sensors (rotary encoders, distance sensors) connected over Ethernet/IP. Computes the tool-tip position from the kinematic chain defined in a standard URDF file. Includes an integrated 3D URDF viewer. See [URDF Robot FK Positioning](./positioning-robot-urdf.md) for details.
 - `IO`: Driver for the rotation + distance type systems (like the Jäger HandyFlex)  with optional support for tilt. Note that this driver requires providing some LUA glue code to read the sensors values from e.g. a field bus and forwarding the raw
-sensor values to the driver by calling `UpdatePos_RotIncLenInc()` or `UpdatePos_RotIncLenAbs()`. The driver then handles coordinate transforms, teaching and tolerance calculations internally. See [IO positioning](./positioning-io.md) for details.
-- `DIGITAL`: Minimal positioning driver, which only uses a single "Inpos" signal. Note that this driver requires providing some LUA glue code to generate the "Inpos" signal (typically by reading I/O values from e.g. a field bus) and thencalling the drivers `UpdatePos_InPos()` function. This can be used to connect exisiting positioning systems or implement own logic based on digital input combinations. See [digital positioning](./positioning-digital.md) for details.
+sensor values to the driver by calling `UpdatePos_RotIncLenInc()` or `UpdatePos_RotIncLenAbs()`. The driver then handles coordinate transforms, teaching and tolerance calculations internally.
+- `DIGITAL`: Minimal positioning driver, which only uses a single "Inpos" signal. Note that this driver requires providing some LUA glue code to generate the "Inpos" signal (typically by reading I/O values from e.g. a field bus) and thencalling the drivers `UpdatePos_InPos()` function. This can be used to connect exisiting positioning systems or implement own logic based on digital input combinations.
 
 Other positioning systems mentioned above (like [ART Verpose](https://ar-tracking.com/en/product-program/products-connection-software-verpose), [Sarissa local positioning system](https://www.sarissa.de/en/solutions/local-positioning-system), [Nexonar RTLS](https://www.nexonar.com/en/solutions/real-time-location-system), ...) are typically implemented using the `DIGITAL` driver, see details here:
 

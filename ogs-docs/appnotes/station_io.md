@@ -4,6 +4,7 @@ tags:
     - appnote
 
 
+
 ---
 
 # Station IO
@@ -28,7 +29,7 @@ Currently the following modules are available (see below for more details on usi
 :::info
 
 
-Note, that you can also use the OpenProtocol custom IO signals for IO. This is not covered here, see the [OpenProtocol tools](/ogs/tools/openprotocol/) section for more information.
+Note, that you can also use the OpenProtocol custom IO signals for IO. This is not covered here, see the [OpenProtocol tools](../tools/openprotocol/README.md) section for more information.
 
 :::
 
