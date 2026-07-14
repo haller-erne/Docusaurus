@@ -77,7 +77,7 @@ Please contact [Atlas Copco](https://www.atlascopco.com) for information about c
 
 ### Configuration
 
-See [MTC manual](https://www.atlascopco.com/content/dam/atlas-copco/local-countries/germany/documents/Taschenbuch%20Power%20Focus%206000.pdf) for details about how to configure the tightening controller and enable OpenProtocol.
+See [MT Focus 6000 online manual](https://picontent.atlascopco.com/cont/external/dir/20/1181269515_A0580001_html5_external/index.html) and the [Tools Talk MT online Manual](https://picontent.atlascopco.com/cont/external/dir/4e/1275008523__html5_external/index.html) for details about how to configure the tightening controller and enable OpenProtocol.
 
 Here are some screenshots on how to configure the settings:
 
