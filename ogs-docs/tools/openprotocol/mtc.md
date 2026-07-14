@@ -12,7 +12,7 @@ tags:
 # Atlas Copco MicroTorque tools
 
 <img style={{float: 'right', margin: '0 0 1rem 1rem'}} width="300" src={require('./resources/ac-mtc.png').default} alt="AC Microtorque" />
-The [Atlas Copco MicroTorque tools](https://www.atlascopco.com/en-us/itba/expert-hub/product-training/microtorque) deliver advanced tightening solutions for any low-torque application. Designed to meet the high standards of the modern electronics industry, these tools ensure precision and accuracy for every fastener—boosting both production efficiency and quality.
+The [Atlas Copco MicroTorque tools](https://www.atlascopco.com/en-us/itba/expert-hub/product-training/microtorque) and [MT Focus 6000 Controller](https://www.atlascopco.com/de-de/itba/products/assembly-solutions/electric-assembly-systems/mt-focus-6000-sku8432085100) deliver advanced tightening solutions for any low-torque application. Designed to meet the high standards of the modern electronics industry, these tools ensure precision and accuracy for every fastener—boosting both production efficiency and quality.
 
 What sets MicroTorque apart is its innovative tightening strategy, which focuses on actual clamp torque rather than the traditional torque and angle method. This approach excels in environments with inconsistent production materials, ensuring consistent clamp force. The result? Enhanced product quality, increased productivity, and reduced production costs.
 
