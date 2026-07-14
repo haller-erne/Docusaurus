@@ -79,6 +79,20 @@ Please contact [Atlas Copco](https://www.atlascopco.com) for information about c
 
 See [MTC manual](https://www.atlascopco.com/content/dam/atlas-copco/local-countries/germany/documents/Taschenbuch%20Power%20Focus%206000.pdf) for details about how to configure the tightening controller and enable OpenProtocol.
 
+Here are some screenshots on how to configure the settings:
+
+Open the settings page by clicking the gear icon:
+
+<img width="300" src={require('./resources/MTF_1von3.jpg').default} alt="AC Microtorque" />
+
+Open the sources:
+
+![alt text](resources/MTF_2von3.jpg)
+
+Select OpenProtocol as source:
+
+![alt text](resources/MTF_3von3.jpg)
+
 <!--
 ### Tool mode
 
