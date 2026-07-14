@@ -87,11 +87,11 @@ Open the settings page by clicking the gear icon:
 
 Open the sources:
 
-![alt text](resources/MTF_2von3.jpg)
+<img width="300" src={require('.resources/MTF_2von3.jpg).default} alt="AC Microtorque" />
 
 Select OpenProtocol as source:
 
-![alt text](resources/MTF_3von3.jpg)
+<img width="300" src={require('.resources/MTF_3von3.jpg).default} alt="AC Microtorque" />
 
 <!--
 ### Tool mode

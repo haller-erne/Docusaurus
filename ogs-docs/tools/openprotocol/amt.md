@@ -4,9 +4,6 @@ tags:
     - tool
     - tightening
     - openprotocol
-
-
-
 ---
 
 # AMT/EST SX Wifi battery tools
