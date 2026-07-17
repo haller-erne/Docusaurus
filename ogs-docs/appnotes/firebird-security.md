@@ -149,9 +149,9 @@ create mapping heOpCfg_monitor_role using plugin win_sspi from group "QUALITYR\h
 
 ```
 
-??? note "🎬 Test login!"
+<details>
+<summary>🎬 Test login!</summary>
 
-```
 Try running a command shell using the Windows logon for any user which is a member of the "QUALITYR\heOpCfg_editor" group.
 
     > runas /noprofile /user:ogs_editor cmd.exe 
@@ -180,12 +180,10 @@ The expected output is:
                 60
                 ...
     SQL>
-```
 
-
-```
 *Demo output varies. Your user mappings might differ from what's shown here.*
-```
+
+</details>
 
 ### Step 3: Grant granular permissions to special roles
 
@@ -201,7 +199,8 @@ This is usually needed for the `db_role_monitor`, as the windows user running OG
 total, archpart, transaktion, nutzer, limit, archaktion, archdesign, result, tool_position, station_runtime 
 ```
 
-??? note "🎬 Copy & paste code"
+<details>
+<summary>🎬 Copy & paste code</summary>
 
     ``` sql
     GRANT ALL ON TABLE total TO ROLE db_role_monitor;
@@ -215,6 +214,8 @@ total, archpart, transaktion, nutzer, limit, archaktion, archdesign, result, too
     GRANT ALL ON TABLE tool_position TO ROLE db_role_monitor;
     GRANT ALL ON TABLE station_runtime TO ROLE db_role_monitor;
     ```
+
+</details>
 
 
 ### Step 4: Change server configuration to only allow trusted authentication
@@ -278,16 +279,17 @@ allow alias access - i.e. only databases registered in [databases.conf](https://
 - [GSEC command line utility](https://www.firebirdsql.org/file/documentation/html/en/firebirddocs/gsec/firebird-gsec.html)
 - [Firebird hardening tips](https://www.firebirdsql.org/manual/de/qsg2-de-config.html)
 
-??? note "🎬 3rd party info"
+<details>
+<summary>🎬 3rd party info</summary>
 
-```
 - [README.mapping.html](https://github.com/FirebirdSQL/firebird/blob/master/doc/sql.extensions/README.mapping.html)
 - [Configuring trusted authentication](https://ib-aid.com/download/docs/fb4migrationguide.html#_configuring_trusted_authentication).
 - [README.trusted_authentication](https://github.com/FirebirdSQL/firebird/blob/master/doc/README.trusted_authentication).
 
 - [using GSEC to setup automatic admin mapping](https://www.firebirdsql.org/file/documentation/html/en/firebirddocs/gsec/firebird-gsec.html#gsec-interactive-admin-mapping)
 - [LANGREF:auto admin mapping](https://www.firebirdsql.org/refdocs/langrefupd25-security-auto-admin-mapping.html).
-```
+
+</details>
 
 
 
