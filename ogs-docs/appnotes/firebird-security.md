@@ -154,32 +154,42 @@ create mapping heOpCfg_monitor_role using plugin win_sspi from group "QUALITYR\h
 
 Try running a command shell using the Windows logon for any user which is a member of the "QUALITYR\heOpCfg_editor" group.
 
-    > runas /noprofile /user:ogs_editor cmd.exe 
+``` cmd
+runas /noprofile /user:ogs_editor cmd.exe
+```
 
 This will open a new command window with the given users login token and groups (you can check by running `whoami /groups`). Now execute `isql` as follows to see the effective user and role:
 
-    [ogs_editor]> isql -tr `<dbhost>:<dbname>`
+``` cmd
+[ogs_editor]> isql -tr <dbhost>:<dbname>
+```
 
 The expected output is:
 
-    C:\Program Files\Firebird\Firebird_4_0>isql -tr 127.0.0.1:test01
-    Database: 127.0.0.1:test01, User: PUBLIC, Role: DB_ROLE_WRITER
-    SQL>
+``` cmd
+C:\Program Files\Firebird\Firebird_4_0>isql -tr 127.0.0.1:test01
+Database: 127.0.0.1:test01, User: PUBLIC, Role: DB_ROLE_WRITER
+SQL>
+```
 
 To test, if the user can access the schema objects, run (in isql) a query:
 
-    SQL> select part from part;
+``` sql
+SQL> select part from part;
+```
 
 The expected output is:
 
-    SQL> select part from part;
+``` sql
+SQL> select part from part;
 
-                PART
-        ============
-                59
-                60
-                ...
-    SQL>
+            PART
+    ============
+            59
+            60
+            ...
+SQL>
+```
 
 *Demo output varies. Your user mappings might differ from what's shown here.*
 
