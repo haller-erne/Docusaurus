@@ -119,6 +119,13 @@ const config: Config = {
         searchResultLimits: 8,
         searchResultContextMaxLength: 50,
         docsRouteBasePath: ['/docs', '/ogs', '/heoptester'],
+        searchContextByPaths: [
+          { label: 'ctrlX Apps', path: 'docs' },
+          { label: 'OGS Docs', path: 'ogs' },
+          { label: 'OP Tester', path: 'heoptester' },
+        ],
+        // On non-doc pages (e.g. homepage), search across all contexts.
+        useAllContextsWithNoSearchContext: true,
         indexDocs: true,
         indexBlog: false,
         indexPages: true,
