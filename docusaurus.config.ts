@@ -95,12 +95,12 @@ const config: Config = {
         editUrl: 'https://github.com/haller-erne/Docusaurus/tree/main/',
         remarkPlugins: [remarkMath],
         rehypePlugins: [rehypeKatex],
-        lastVersion: '3.1.10',
+        lastVersion: '3.1.9',
         includeCurrentVersion: true,
         versions: {
-          '3.1.10': {
-            label: 'OGS 3.1.10',
-            path: '3.1.10',
+          '3.1.9': {
+            label: 'OGS 3.1.9',
+            path: '3.1.9',
             badge: true,
             banner: 'none',
           },
@@ -161,15 +161,10 @@ const config: Config = {
           label: 'ctrlX Apps',
         },
         {
-          to: '/ogs/',
-          label: 'OGS Docs',
-          position: 'left',
-          activeBaseRegex: '/ogs/',
-        },
-        {
           type: 'docsVersionDropdown',
           docsPluginId: 'ogs',
           position: 'left',
+          label: 'OGS Docs',
         },
         {
           to: '/heoptester/',
