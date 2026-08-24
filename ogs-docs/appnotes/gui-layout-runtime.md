@@ -38,7 +38,7 @@ If e.g. running on a 3K 16:9 screen (2880x1620 pixel), it is recommended to set 
 
 The layout of the start page is as follows:
 
-![Start page layout](./startpage.drawio.svg)
+![Start page layout](./startpage.svg)
 
 The layout uses a fixed height for the top bar (for the logos) and the bottom bar (status bar). Also the width of the barcode entry fields and the project startpage logo is fixed. All other panes will adjust dynamically to varying display sizes.
 
@@ -75,7 +75,7 @@ As the application is running in kiosk mode (covering the full screen and hiding
 
 The layout of the process page is as follows:
 
-![Process page layout](./processpage.drawio.svg)
+![Process page layout](./processpage.svg)
 
 The layout uses a fixed height for the process page logo and the bottom bar (status bar). Also the width of the process list and buttons (and the process page logo) is fixed. All other panes will adjust dynamically to changed display sizes.
 

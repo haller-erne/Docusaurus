@@ -27,7 +27,7 @@ delivery of all process events.
 
 Here is an overview of the system setup:
 
-![Traceability](./traceability.drawio.svg)
+![Traceability](./traceability.svg)
 
 
 ## Usage
