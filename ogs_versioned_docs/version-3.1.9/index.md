@@ -13,9 +13,11 @@ of OGS by modifying and extending the software.
 
 The documentation currently has the following information:
 
-- Tool driver and tool configuration information (see [Tool configuration](tools/README.md))
-- LUA scripting (see [LUA scripting](v3/getting-started.md))
-- LUA helper libraries (included in the LUA scripting section)
+- Installation and administration (see [Installation & Administration](admin/index.md))
+- Day-to-day operation (see [User Guide](user/index.md))
+- Tool driver and tool configuration information (see [Tool configuration](tool-config/index.md))
+- Product highlights and release notes (see [Features](features/index.md))
+- Lua scripting, interfaces, helper libraries and data output formats (see [Lua API Reference](reference/index.md))
 
 :::tip
 
