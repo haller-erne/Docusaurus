@@ -69,7 +69,7 @@ const products: ProductCard[] = [
     title: 'OGS — Operator Guidance System',
     description:
       'Low-level developer documentation for OGS V3: Lua scripting API, tool drivers, data output, and system configuration.',
-    to: '/ogs/',
+    to: '/ogs/next/',
     buttonLabel: 'OGS Docs',
     icon: '🖥️',
   },
@@ -144,7 +144,7 @@ function QuickLinks() {
     {
       title: 'OGS Tool Drivers',
       description: 'OpenProtocol, BLE, positioning, and more.',
-      to: '/ogs/tools/',
+      to: '/ogs/next/tool-config/',
     },
     {
       title: 'OP Tester Scripting',

@@ -95,8 +95,8 @@ const config: Config = {
         editUrl: 'https://github.com/haller-erne/Docusaurus/tree/main/',
         remarkPlugins: [remarkMath],
         rehypePlugins: [rehypeKatex],
-        lastVersion: '3.1.9',
         includeCurrentVersion: true,
+        lastVersion: '3.1.9',
         versions: {
           '3.1.9': {
             label: 'OGS 3.1.9',
