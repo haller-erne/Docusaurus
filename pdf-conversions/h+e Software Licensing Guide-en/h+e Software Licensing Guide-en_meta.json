@@ -1,0 +1,806 @@
+{
+  "table_of_contents": [
+    {
+      "title": "Licensing Guide",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          97.27022024005726,
+          249.2850341796875
+        ],
+        [
+          291.406493986884,
+          249.2850341796875
+        ],
+        [
+          291.406493986884,
+          283.03773543373984
+        ],
+        [
+          97.27022024005726,
+          283.03773543373984
+        ]
+      ]
+    },
+    {
+      "title": "Document revisions",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          45.4689407540809,
+          94.27611403834682
+        ],
+        [
+          179.71882502558248,
+          94.27611403834682
+        ],
+        [
+          179.71882502558248,
+          111.90091070105534
+        ],
+        [
+          45.4689407540809,
+          111.90091070105534
+        ]
+      ]
+    },
+    {
+      "title": "Content",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          46.19401440752543,
+          82.27446468961313
+        ],
+        [
+          101.93476271929609,
+          82.27446468961313
+        ],
+        [
+          101.93476271929609,
+          99.2108154296875
+        ],
+        [
+          46.19401440752543,
+          99.2108154296875
+        ]
+      ]
+    },
+    {
+      "title": "1 Overview",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          47.50731862642302,
+          94.48125141853747
+        ],
+        [
+          133.61222812450802,
+          94.48125141853747
+        ],
+        [
+          133.61222812450802,
+          111.2108154296875
+        ],
+        [
+          47.50731862642302,
+          111.2108154296875
+        ]
+      ]
+    },
+    {
+      "title": "1.1 Types of licenses",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          47.04326908294139,
+          120.04381386679617
+        ],
+        [
+          180.36899434048823,
+          120.04381386679617
+        ],
+        [
+          180.36899434048823,
+          136.66876220703125
+        ],
+        [
+          47.04326908294139,
+          136.66876220703125
+        ]
+      ]
+    },
+    {
+      "title": "1.1.1 Full version",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          46.98536489952721,
+          143.52453594258716
+        ],
+        [
+          142.19731505271469,
+          143.52453594258716
+        ],
+        [
+          142.19731505271469,
+          159.52703857421875
+        ],
+        [
+          46.98536489952721,
+          159.52703857421875
+        ]
+      ]
+    },
+    {
+      "title": "1.1.2 Trial version",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          46.885686206577404,
+          213.47437474564154
+        ],
+        [
+          146.68755511612974,
+          213.47437474564154
+        ],
+        [
+          146.68755511612974,
+          228.64703369140625
+        ],
+        [
+          46.885686206577404,
+          228.64703369140625
+        ]
+      ]
+    },
+    {
+      "title": "1.1.3 Without Key",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          46.60308332467259,
+          283.1454610170685
+        ],
+        [
+          145.24653068177346,
+          283.1454610170685
+        ],
+        [
+          145.24653068177346,
+          297.76708984375
+        ],
+        [
+          46.60308332467259,
+          297.76708984375
+        ]
+      ]
+    },
+    {
+      "title": "2 Details",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          46.59516881755377,
+          93.10948349637637
+        ],
+        [
+          116.4079336939891,
+          93.10948349637637
+        ],
+        [
+          116.4079336939891,
+          111.20770263671875
+        ],
+        [
+          46.59516881755377,
+          111.20770263671875
+        ]
+      ]
+    },
+    {
+      "title": "2.1 Request a trial license",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          46.5031555137346,
+          228.28357634709968
+        ],
+        [
+          210.82881683426479,
+          228.28357634709968
+        ],
+        [
+          210.82881683426479,
+          245.385986328125
+        ],
+        [
+          46.5031555137346,
+          245.385986328125
+        ]
+      ]
+    },
+    {
+      "title": "2.2 Activate the software with a trial license",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          46.531761130998355,
+          70.34595570347719
+        ],
+        [
+          318.781708916729,
+          70.34595570347719
+        ],
+        [
+          318.781708916729,
+          86.2659912109375
+        ],
+        [
+          46.531761130998355,
+          86.2659912109375
+        ]
+      ]
+    },
+    {
+      "title": "2.3 Request a full license",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          46.70785605096697,
+          582.6169309675535
+        ],
+        [
+          204.99285857923684,
+          582.6169309675535
+        ],
+        [
+          204.99285857923684,
+          599.3869323730469
+        ],
+        [
+          46.70785605096697,
+          599.3869323730469
+        ]
+      ]
+    },
+    {
+      "title": "2.4 Activate the software with a full license",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          46.78857600598852,
+          511.8393922094139
+        ],
+        [
+          312.9736289689763,
+          511.8393922094139
+        ],
+        [
+          312.9736289689763,
+          529.0688171386719
+        ],
+        [
+          46.78857600598852,
+          529.0688171386719
+        ]
+      ]
+    },
+    {
+      "title": "3 Frequently asked questions (FAQ)",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          46.56417796713879,
+          93.47497365650914
+        ],
+        [
+          290.35458612321906,
+          93.47497365650914
+        ],
+        [
+          290.35458612321906,
+          111.2108154296875
+        ],
+        [
+          46.56417796713879,
+          111.2108154296875
+        ]
+      ]
+    },
+    {
+      "title": "3.1 Transfer the license to another computer",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          46.648282490689446,
+          119.474513447083
+        ],
+        [
+          324.43230048114765,
+          119.474513447083
+        ],
+        [
+          324.43230048114765,
+          136.66876220703125
+        ],
+        [
+          46.648282490689446,
+          136.66876220703125
+        ]
+      ]
+    },
+    {
+      "title": "3.2 Transfer the license to another software",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          46.70352368871271,
+          192.21893647517462
+        ],
+        [
+          319.4950453904774,
+          192.21893647517462
+        ],
+        [
+          319.4950453904774,
+          208.18878173828125
+        ],
+        [
+          46.70352368871271,
+          208.18878173828125
+        ]
+      ]
+    },
+    {
+      "title": "3.3 Save & restore the license",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          46.32228440061324,
+          235.87836726011173
+        ],
+        [
+          232.67890403613035,
+          235.87836726011173
+        ],
+        [
+          232.67890403613035,
+          252.82879638671875
+        ],
+        [
+          46.32228440061324,
+          252.82879638671875
+        ]
+      ]
+    },
+    {
+      "title": "3.4 Changed computer name",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          46.38282579859197,
+          295.0485201773639
+        ],
+        [
+          227.41753212570842,
+          295.0485201773639
+        ],
+        [
+          227.41753212570842,
+          310.9088134765625
+        ],
+        [
+          46.38282579859197,
+          310.9088134765625
+        ]
+      ]
+    },
+    {
+      "title": "3.5 Changed license parameters",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          46.384523809706835,
+          351.7592211457522
+        ],
+        [
+          248.76358777870158,
+          351.7592211457522
+        ],
+        [
+          248.76358777870158,
+          368.9888610839844
+        ],
+        [
+          46.384523809706835,
+          368.9888610839844
+        ]
+      ]
+    }
+  ],
+  "page_stats": [
+    {
+      "page_id": 0,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          37
+        ],
+        [
+          "Line",
+          5
+        ],
+        [
+          "Text",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 1,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          43
+        ],
+        [
+          "Line",
+          5
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ],
+        [
+          "Text",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 2,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          211
+        ],
+        [
+          "Line",
+          19
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "TableOfContents",
+          1
+        ],
+        [
+          "PageFooter",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 3,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          227
+        ],
+        [
+          "Line",
+          13
+        ],
+        [
+          "SectionHeader",
+          5
+        ],
+        [
+          "Text",
+          3
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 4,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          530
+        ],
+        [
+          "Line",
+          24
+        ],
+        [
+          "Text",
+          9
+        ],
+        [
+          "Picture",
+          3
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 5,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          397
+        ],
+        [
+          "Line",
+          19
+        ],
+        [
+          "Text",
+          11
+        ],
+        [
+          "Picture",
+          4
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "Form",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 6,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          417
+        ],
+        [
+          "Line",
+          17
+        ],
+        [
+          "Text",
+          8
+        ],
+        [
+          "Picture",
+          3
+        ],
+        [
+          "Form",
+          3
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 7,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          160
+        ],
+        [
+          "Line",
+          7
+        ],
+        [
+          "Text",
+          3
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "Picture",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 8,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          363
+        ],
+        [
+          "Line",
+          18
+        ],
+        [
+          "SectionHeader",
+          6
+        ],
+        [
+          "Text",
+          5
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    }
+  ],
+  "debug_data_path": "debug_data\\h+e Software Licensing Guide-en"
+}

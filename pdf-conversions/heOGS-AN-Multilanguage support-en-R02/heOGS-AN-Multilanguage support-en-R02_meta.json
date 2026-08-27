@@ -1,0 +1,1311 @@
+{
+  "table_of_contents": [
+    {
+      "title": "Haller + Erne GmbH",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          160.12780846276272,
+          183.5847698697424
+        ],
+        [
+          403.7784070223945,
+          183.5847698697424
+        ],
+        [
+          403.7784070223945,
+          210.435546875
+        ],
+        [
+          160.12780846276272,
+          210.435546875
+        ]
+      ]
+    },
+    {
+      "title": "",
+      "heading_level": null,
+      "page_id": 0,
+      "polygon": [
+        [
+          159.96736502467235,
+          228.34906288479866
+        ],
+        [
+          440.66514145397116,
+          228.34906288479866
+        ],
+        [
+          440.66514145397116,
+          267.60085154641234
+        ],
+        [
+          159.96736502467235,
+          267.60085154641234
+        ]
+      ]
+    },
+    {
+      "title": "Version history",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          50.794075415777016,
+          87.00525496118533
+        ],
+        [
+          184.93698212361755,
+          87.00525496118533
+        ],
+        [
+          184.93698212361755,
+          109.24005126953125
+        ],
+        [
+          50.794075415777016,
+          109.24005126953125
+        ]
+      ]
+    },
+    {
+      "title": "About this document",
+      "heading_level": null,
+      "page_id": 1,
+      "polygon": [
+        [
+          50.28272495221731,
+          163.5435783134861
+        ],
+        [
+          235.35973429259485,
+          163.5435783134861
+        ],
+        [
+          235.35973429259485,
+          186.4000244140625
+        ],
+        [
+          50.28272495221731,
+          186.4000244140625
+        ]
+      ]
+    },
+    {
+      "title": "Table of Contents",
+      "heading_level": null,
+      "page_id": 2,
+      "polygon": [
+        [
+          51.62363258957562,
+          75.49899342266025
+        ],
+        [
+          206.67934727128267,
+          75.49899342266025
+        ],
+        [
+          206.67934727128267,
+          97.24005126953125
+        ],
+        [
+          51.62363258957562,
+          97.24005126953125
+        ]
+      ]
+    },
+    {
+      "title": "1 Overview",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          52.98178950004674,
+          79.72849820579468
+        ],
+        [
+          178.80018096846956,
+          79.72849820579468
+        ],
+        [
+          178.80018096846956,
+          102.74847412109375
+        ],
+        [
+          52.98178950004674,
+          102.74847412109375
+        ]
+      ]
+    },
+    {
+      "title": "1.1 Components",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          51.802860096660005,
+          203.370250453932
+        ],
+        [
+          184.59720809513735,
+          203.370250453932
+        ],
+        [
+          184.59720809513735,
+          223.96002197265625
+        ],
+        [
+          51.802860096660005,
+          223.96002197265625
+        ]
+      ]
+    },
+    {
+      "title": "1.2 Language codes and primary language",
+      "heading_level": null,
+      "page_id": 3,
+      "polygon": [
+        [
+          51.9956144241602,
+          437.2499969563947
+        ],
+        [
+          396.62437980901683,
+          437.2499969563947
+        ],
+        [
+          396.62437980901683,
+          458.3699951171875
+        ],
+        [
+          51.9956144241602,
+          458.3699951171875
+        ]
+      ]
+    },
+    {
+      "title": "1.3 Language packs and file formats",
+      "heading_level": null,
+      "page_id": 4,
+      "polygon": [
+        [
+          52.99360971907224,
+          76.58415477613413
+        ],
+        [
+          344.18067943659474,
+          76.58415477613413
+        ],
+        [
+          344.18067943659474,
+          97.24005126953125
+        ],
+        [
+          52.99360971907224,
+          97.24005126953125
+        ]
+      ]
+    },
+    {
+      "title": "2 Workflow editor",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          50.61934921303084,
+          78.06577053053084
+        ],
+        [
+          249.44927501918687,
+          78.06577053053084
+        ],
+        [
+          249.44927501918687,
+          102.74847412109375
+        ],
+        [
+          50.61934921303084,
+          102.74847412109375
+        ]
+      ]
+    },
+    {
+      "title": "2.1 Overview",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          50.86232229083851,
+          115.87487040219939
+        ],
+        [
+          158.81475622527844,
+          115.87487040219939
+        ],
+        [
+          158.81475622527844,
+          137.44000244140625
+        ],
+        [
+          50.86232229083851,
+          137.44000244140625
+        ]
+      ]
+    },
+    {
+      "title": "2.2 Walkthrough \u2013 inline translations",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          50.86611919258944,
+          148.09572279973423
+        ],
+        [
+          342.75203645259364,
+          148.09572279973423
+        ],
+        [
+          342.75203645259364,
+          170.08001708984375
+        ],
+        [
+          50.86611919258944,
+          170.08001708984375
+        ]
+      ]
+    },
+    {
+      "title": "2.2.1 Define available languages",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          50.867957511536716,
+          225.84915663871186
+        ],
+        [
+          258.84330246010114,
+          225.84915663871186
+        ],
+        [
+          258.84330246010114,
+          244.368408203125
+        ],
+        [
+          50.867957511536716,
+          244.368408203125
+        ]
+      ]
+    },
+    {
+      "title": "2.2.2 Edit action texts",
+      "heading_level": null,
+      "page_id": 5,
+      "polygon": [
+        [
+          51.082130259170334,
+          560.4905354745241
+        ],
+        [
+          189.86999934506355,
+          560.4905354745241
+        ],
+        [
+          189.86999934506355,
+          578.4983825683594
+        ],
+        [
+          51.082130259170334,
+          578.4983825683594
+        ]
+      ]
+    },
+    {
+      "title": "2.3 Walkthrough \u2013 external translations",
+      "heading_level": null,
+      "page_id": 6,
+      "polygon": [
+        [
+          51.458040713062815,
+          438.0866320942091
+        ],
+        [
+          365.08599669026484,
+          438.0866320942091
+        ],
+        [
+          365.08599669026484,
+          459.80999755859375
+        ],
+        [
+          51.458040713062815,
+          459.80999755859375
+        ]
+      ]
+    },
+    {
+      "title": "2.3.1 Setup",
+      "heading_level": null,
+      "page_id": 7,
+      "polygon": [
+        [
+          51.11909135102625,
+          408.54520188668744
+        ],
+        [
+          130.51536560058594,
+          408.54520188668744
+        ],
+        [
+          130.51536560058594,
+          426.91839599609375
+        ],
+        [
+          51.11909135102625,
+          426.91839599609375
+        ]
+      ]
+    },
+    {
+      "title": "2.3.2 Generate (export) translation file",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          50.160720133361046,
+          74.69280769436463
+        ],
+        [
+          291.42678994435806,
+          74.69280769436463
+        ],
+        [
+          291.42678994435806,
+          92.56842041015625
+        ],
+        [
+          50.160720133361046,
+          92.56842041015625
+        ]
+      ]
+    },
+    {
+      "title": "2.3.3 Translate using Excel",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          50.993043375856026,
+          290.9345835739231
+        ],
+        [
+          224.35989802670417,
+          290.9345835739231
+        ],
+        [
+          224.35989802670417,
+          309.79840087890625
+        ],
+        [
+          50.993043375856026,
+          309.79840087890625
+        ]
+      ]
+    },
+    {
+      "title": "2.3.3.1 Step 1: Open the file using Excels text import wizard",
+      "heading_level": null,
+      "page_id": 8,
+      "polygon": [
+        [
+          51.334415195570784,
+          379.05482005988074
+        ],
+        [
+          376.50941371197064,
+          379.05482005988074
+        ],
+        [
+          376.50941371197064,
+          395.4100036621094
+        ],
+        [
+          51.334415195570784,
+          395.4100036621094
+        ]
+      ]
+    },
+    {
+      "title": "2.3.3.2 Step 2: Editing translations",
+      "heading_level": null,
+      "page_id": 9,
+      "polygon": [
+        [
+          50.8129797486274,
+          100.42128310029462
+        ],
+        [
+          240.5555681281486,
+          100.42128310029462
+        ],
+        [
+          240.5555681281486,
+          115.780029296875
+        ],
+        [
+          50.8129797486274,
+          115.780029296875
+        ]
+      ]
+    },
+    {
+      "title": "2.3.3.3 Step 3: Saving the updated/translated CSV file",
+      "heading_level": null,
+      "page_id": 9,
+      "polygon": [
+        [
+          51.06532768038117,
+          391.6664243377115
+        ],
+        [
+          345.64865442847724,
+          391.6664243377115
+        ],
+        [
+          345.64865442847724,
+          408.3699951171875
+        ],
+        [
+          51.06532768038117,
+          408.3699951171875
+        ]
+      ]
+    },
+    {
+      "title": "2.3.4 Merge (import) translation file",
+      "heading_level": null,
+      "page_id": 10,
+      "polygon": [
+        [
+          50.330624328152055,
+          74.73479504470622
+        ],
+        [
+          273.08080209112285,
+          74.73479504470622
+        ],
+        [
+          273.08080209112285,
+          92.56842041015625
+        ],
+        [
+          50.330624328152055,
+          92.56842041015625
+        ]
+      ]
+    },
+    {
+      "title": "2.3.5 Check translated texts",
+      "heading_level": null,
+      "page_id": 10,
+      "polygon": [
+        [
+          50.826815818959574,
+          291.1617271307846
+        ],
+        [
+          229.52767029577296,
+          291.1617271307846
+        ],
+        [
+          229.52767029577296,
+          309.79840087890625
+        ],
+        [
+          50.826815818959574,
+          309.79840087890625
+        ]
+      ]
+    },
+    {
+      "title": "3 Station runtime",
+      "heading_level": null,
+      "page_id": 11,
+      "polygon": [
+        [
+          51.361096591132714,
+          79.17000352242962
+        ],
+        [
+          246.00408935546875,
+          79.17000352242962
+        ],
+        [
+          246.00408935546875,
+          102.74847412109375
+        ],
+        [
+          51.361096591132714,
+          102.74847412109375
+        ]
+      ]
+    },
+    {
+      "title": "4 Reference",
+      "heading_level": null,
+      "page_id": 12,
+      "polygon": [
+        [
+          51.19033909564654,
+          78.92355379289744
+        ],
+        [
+          187.82039398270229,
+          78.92355379289744
+        ],
+        [
+          187.82039398270229,
+          102.74847412109375
+        ],
+        [
+          51.19033909564654,
+          102.74847412109375
+        ]
+      ]
+    },
+    {
+      "title": "4.1 Workflow Editor (heOpCfg.exe)",
+      "heading_level": null,
+      "page_id": 12,
+      "polygon": [
+        [
+          51.05903387189812,
+          115.24514023194011
+        ],
+        [
+          332.68272173134443,
+          115.24514023194011
+        ],
+        [
+          332.68272173134443,
+          137.44000244140625
+        ],
+        [
+          51.05903387189812,
+          137.44000244140625
+        ]
+      ]
+    },
+    {
+      "title": "4.2 Station runtime",
+      "heading_level": null,
+      "page_id": 12,
+      "polygon": [
+        [
+          50.74696061833379,
+          374.17113062110417
+        ],
+        [
+          204.71512924693994,
+          374.17113062110417
+        ],
+        [
+          204.71512924693994,
+          395.95001220703125
+        ],
+        [
+          50.74696061833379,
+          395.95001220703125
+        ]
+      ]
+    },
+    {
+      "title": "4.3 heOGS Database Browser (Locate.exe)",
+      "heading_level": null,
+      "page_id": 12,
+      "polygon": [
+        [
+          50.491989789141215,
+          676.9513181854546
+        ],
+        [
+          402.3402345594891,
+          676.9513181854546
+        ],
+        [
+          402.3402345594891,
+          699.3600006103516
+        ],
+        [
+          50.491989789141215,
+          699.3600006103516
+        ]
+      ]
+    }
+  ],
+  "page_stats": [
+    {
+      "page_id": 0,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          13
+        ],
+        [
+          "Line",
+          5
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "Text",
+          2
+        ],
+        [
+          "PageHeader",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 1,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          42
+        ],
+        [
+          "Line",
+          11
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Table",
+          1
+        ],
+        [
+          "Text",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 2,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          134
+        ],
+        [
+          "Line",
+          26
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "TableOfContents",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 3,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          144
+        ],
+        [
+          "Line",
+          45
+        ],
+        [
+          "Text",
+          8
+        ],
+        [
+          "ListItem",
+          7
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "ListGroup",
+          3
+        ],
+        [
+          "Reference",
+          3
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 4,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          82
+        ],
+        [
+          "Line",
+          28
+        ],
+        [
+          "ListItem",
+          6
+        ],
+        [
+          "Text",
+          4
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "ListGroup",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Reference",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 5,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          121
+        ],
+        [
+          "Line",
+          39
+        ],
+        [
+          "Text",
+          6
+        ],
+        [
+          "SectionHeader",
+          5
+        ],
+        [
+          "Reference",
+          5
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "ListGroup",
+          1
+        ],
+        [
+          "Form",
+          1
+        ],
+        [
+          "ListItem",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 6,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          100
+        ],
+        [
+          "Line",
+          31
+        ],
+        [
+          "ListItem",
+          8
+        ],
+        [
+          "Text",
+          4
+        ],
+        [
+          "ListGroup",
+          3
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Reference",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 7,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          92
+        ],
+        [
+          "Line",
+          29
+        ],
+        [
+          "Text",
+          6
+        ],
+        [
+          "ListItem",
+          6
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "ListGroup",
+          2
+        ],
+        [
+          "Table",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "Reference",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 8,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          60
+        ],
+        [
+          "Line",
+          18
+        ],
+        [
+          "Text",
+          5
+        ],
+        [
+          "SectionHeader",
+          3
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "Form",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Reference",
+          2
+        ],
+        [
+          "Picture",
+          1
+        ],
+        [
+          "Table",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 9,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          38
+        ],
+        [
+          "Line",
+          12
+        ],
+        [
+          "Text",
+          4
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "Picture",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 10,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          38
+        ],
+        [
+          "Line",
+          12
+        ],
+        [
+          "Text",
+          5
+        ],
+        [
+          "Picture",
+          3
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "SectionHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "Reference",
+          2
+        ],
+        [
+          "Form",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 11,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          66
+        ],
+        [
+          "Line",
+          22
+        ],
+        [
+          "Text",
+          4
+        ],
+        [
+          "ListItem",
+          4
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ],
+        [
+          "SectionHeader",
+          1
+        ],
+        [
+          "ListGroup",
+          1
+        ],
+        [
+          "Diagram",
+          1
+        ],
+        [
+          "Picture",
+          1
+        ],
+        [
+          "Reference",
+          1
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 12,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          150
+        ],
+        [
+          "Line",
+          45
+        ],
+        [
+          "Text",
+          8
+        ],
+        [
+          "ListItem",
+          8
+        ],
+        [
+          "ListGroup",
+          5
+        ],
+        [
+          "SectionHeader",
+          4
+        ],
+        [
+          "Reference",
+          4
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    },
+    {
+      "page_id": 13,
+      "text_extraction_method": "pdftext",
+      "block_counts": [
+        [
+          "Span",
+          32
+        ],
+        [
+          "Line",
+          13
+        ],
+        [
+          "Text",
+          8
+        ],
+        [
+          "PageHeader",
+          2
+        ],
+        [
+          "PageFooter",
+          2
+        ]
+      ],
+      "block_metadata": {
+        "llm_request_count": 0,
+        "llm_error_count": 0,
+        "llm_tokens_used": 0,
+        "previous_text": "",
+        "previous_type": "",
+        "previous_order": 0
+      }
+    }
+  ],
+  "debug_data_path": "debug_data\\heOGS-AN-Multilanguage support-en-R02"
+}
