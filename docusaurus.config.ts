@@ -74,6 +74,7 @@ const config: Config = {
 
   // Enable Mermaid code blocks
   markdown: {
+    format: 'detect',
     mermaid: true,
     hooks: {
       onBrokenMarkdownLinks: 'warn',
@@ -120,6 +121,16 @@ const config: Config = {
       },
     ],
     [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'lualib-api',
+        path: 'docs/lualib-api',
+        routeBasePath: 'lualib-api',
+        sidebarPath: './sidebarsLualib.ts',
+        editUrl: 'https://github.com/haller-erne/Docusaurus/tree/main/',
+      },
+    ],
+    [
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
         hashed: true,
@@ -128,11 +139,12 @@ const config: Config = {
         explicitSearchResultPath: true,
         searchResultLimits: 8,
         searchResultContextMaxLength: 50,
-        docsRouteBasePath: ['/docs', '/ogs', '/heoptester'],
+        docsRouteBasePath: ['/docs', '/ogs', '/heoptester', '/lualib-api'],
         searchContextByPaths: [
           { label: 'ctrlX Apps', path: 'docs' },
           { label: 'OGS Docs', path: 'ogs' },
           { label: 'OP Tester', path: 'heoptester' },
+          { label: 'Lua API', path: 'lualib-api' },
         ],
         // On non-doc pages (e.g. homepage), search across all contexts.
         useAllContextsWithNoSearchContext: true,
@@ -171,6 +183,12 @@ const config: Config = {
           label: 'OP Tester',
           position: 'left',
           activeBaseRegex: '/heoptester/',
+        },
+        {
+          to: '/lualib-api/',
+          label: 'Lua API',
+          position: 'left',
+          activeBaseRegex: '/lualib-api/',
         },
         {
           href: 'https://github.com/haller-erne/Docusaurus',
