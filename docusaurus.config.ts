@@ -74,7 +74,6 @@ const config: Config = {
 
   // Enable Mermaid code blocks
   markdown: {
-    format: 'detect',
     mermaid: true,
     hooks: {
       onBrokenMarkdownLinks: 'warn',
@@ -124,7 +123,7 @@ const config: Config = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'lualib-api',
-        path: 'docs/lualib-api',
+        path: 'lualib-api-docs',
         routeBasePath: 'lualib-api',
         sidebarPath: './sidebarsLualib.ts',
         editUrl: 'https://github.com/haller-erne/Docusaurus/tree/main/',
