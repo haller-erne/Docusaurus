@@ -16,7 +16,7 @@ The [Atlas Copco MicroTorque tools](https://www.atlascopco.com/en-us/itba/expert
 
 What sets MicroTorque apart is its innovative tightening strategy, which focuses on actual clamp torque rather than the traditional torque and angle method. This approach excels in environments with inconsistent production materials, ensuring consistent clamp force. The result? Enhanced product quality, increased productivity, and reduced production costs.
 
-They use the [OpenProtocol](../README.md) communication protocol to communicate with the heOGS software. They also support traceability data and curve output through OpenProtocol.
+They use the [OpenProtocol](./README.md) communication protocol to communicate with the heOGS software. They also support traceability data and curve output through OpenProtocol.
 
 <!-- ![Nexo2 cordless nutrunner](resources/nexo2.jpg) -->
 
@@ -32,7 +32,7 @@ Before powering up the tool/controller make sure, that the tool can run freely!
 
 :::warning
 
-The controller must be upgrade to a minimum firmware version of `V3.6.0.8`. Earlier firmware versions do not support blocking loosening over OpenProtocol! 
+The controller must be upgrade to a minimum firmware version of `V3.6.0.8`. Older firmware versions do not support blocking loosening over OpenProtocol! 
 
 :::
 
@@ -50,7 +50,7 @@ The current firmware version of the MT Focus 6000 controller (V3.6.0.8) still ha
 
 ### OGS project configuration
 
-For generic information about how to configure OGS with OpenProtocol tools, see [OpenProtocol documentation](../README.md).
+For generic information about how to configure OGS with OpenProtocol tools, see [OpenProtocol documentation](./README.md).
 
 ### Tool registration and configuration
 
@@ -70,7 +70,9 @@ A typical configuration of the `[OPENPROTO]` section looks like the following (a
 CHANNEL_01=10.10.2.184
 CHANNEL_01_PORT=4545
 CHANNEL_01_TYPE=MTF
-; 
+; Define the time (in milliseconds, default = 500) to
+; wait for a MID0061 result after falling edge of BUSY 
+; (workaround for MTF firmware issue)
 CHANNEL_01_WAIT_FOR_RESULT=500
 ; Force CCW switch selection for rework/loosen
 CHANNEL_01_CCW_ACK=1
@@ -87,7 +89,7 @@ The typical parameters are (for more details about the possible parameters, see 
 
 - `CHANNEL_<channel>`: Define the IP address used to communicate with the tool.
 - `CHANNEL_<channel>_TYPE`: Defines the OpenProtocol communication variant, **must** be set to `MTC`.
-- `CHANNEL_<channel>_PORT`: (optional) Define the TCP port number used for OpenProtocol(typically 4545).
+- `CHANNEL_<channel>_PORT`: (optional) Define the TCP port number used for OpenProtocol (typically 4545, default is 4545 if not set globally to another default port).
 - `CHANNEL_<channel>_CCW_ACK`: (optional) If set to a nonzero value, then the CCWSel switch is monitored for
 the correct position - i.e. if OGS expects loosen, the switch must be set to the CCW position.
 - `CHANNEL_<channel>_WAIT_FOR_RESULT`: (optional, default=500) Set the timeout for waiting for a valid MID0061 result from the tool (in Milliseconds). If not configured, uses 500ms - this is relevant to workaround firmware issues in the tool, where the tool does not send a result even though the tool was started (for short starts in clockwise and generally in loosen). Can be decreased, if the default waiting time for loosen is too high (or better contact your tool vendor for a fixed firmware).
@@ -98,9 +100,9 @@ the correct position - i.e. if OGS expects loosen, the switch must be set to the
 
 To make OGS control loosening and tightening correctly, the following requirements must be met:
 
-- Set the controllers `Tool loosening trigger` to `Select loosening` mode (see [controller configuration below](#configuration))
+- Set the controllers `Tool loosening trigger` to `Select loosening` mode (see [controller setting](#controller-settings))
 - In the workflow editor, set the MTF tools loosening program to empty (or 99).
-- In `station.ini` set the `CHANNEL_<xx>_CHECK_EXT_COND=1` 
+- In `station.ini` set the `CHANNEL_<xx>_CHECK_EXT_COND=1` to enable monitoring the loosen switch.
 
 :::
 
@@ -108,7 +110,7 @@ To make OGS control loosening and tightening correctly, the following requiremen
 
 Like other tools, the `MT Focus 6000` tools can use the OGS buit-in connectivity options to send out data and curves (`Traceability` data) to backend data management systems (like [ToolsNet](https://www.atlascopco.com/en-us/itba/products/assembly-solutions/software-solutions/toolsnet-8-sku4531), [CSP I-P.M.](https://www.csp-sw.com/quality-management-software-solutions/error-prevention-with-ipm/), [Sciemetric QualityWorX](https://www.sciemetric.com/data-intelligence/qualityworx-data-collection), [QualityR](https://www.haller-erne.de/qualityr-web/), etc.). 
 
-To understand the system architecture and details on how to use data output in general, please see [OGS Traceability](../../dataoutput/traceability.md). To setup `Traceability` for `MT Focus 6000` tools, enable `Traceability` and add the tools channel(s) to the list of channels in the `[FTP_CLIENT]` (or `[HTTP_CLIENT]`) section.
+To understand the system architecture and details on how to use data output in general, please see [OGS Traceability](../../dataoutput/traceability.md). To setup `Traceability` for `MT Focus 6000` tools, enable it as shown below and add the tools channel to the list of channels in the `[FTP_CLIENT]` (or `[HTTP_CLIENT]`) section.
 
 Here is a sample setup:
 
@@ -127,9 +129,9 @@ The following parameters are **required** for the `MT Focus 6000` tools, as the 
 - `ChannelName`: Defines the station and channel name seperated by a pipe symbol (`<station>|<channel>`).
 - `location name`: Defines the location name values to use. Note that this setting depends on the Sys3xxGateway settings for processing the tightening results. Make sure to add the relevant information (like data link name, building, line name, etc.), so the tool can be registered in the correct organizational unit.
 
-## Tool configuration
+## Tool and controller configuration
 
-### Firmware version
+### Controller firmware version
 
 The officially supported and tested firmware version for the `MT Focus 6000` controller is as follows:
 
@@ -142,7 +144,7 @@ Things to check here:
 
 Please contact [Atlas Copco](https://www.atlascopco.com) for information about current firmware versions - it is recommended to use up-to-date firmware for compatibility, performance and security!
 
-### Configuration
+### Using ToolsTak MT
 
 See [MT Focus 6000 online manual](https://picontent.atlascopco.com/cont/external/dir/20/1181269515_A0580001_html5_external/index.html) and the [Tools Talk MT online Manual](https://picontent.atlascopco.com/cont/external/dir/4e/1275008523__html5_external/index.html) for details about how to configure the tightening controller and enable OpenProtocol.
 
@@ -164,7 +166,7 @@ Important settings are:
 
 - `Startup: Select source`: set to `Any` or `OpenProtocol only` to allow OGS to control the tool over OpenProtocol.
 
-#### Tool trigger configuration
+### Tool trigger configuration
 
 It is **very important** to configure the tool trigger parameters correctly. To do so, use `ToolsTalk MT` and open the `Configurations` view by clicking the main symbol bars configuration icon:
 
