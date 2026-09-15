@@ -85,7 +85,7 @@ CHANNEL_01_CURVE_REQUEST=0
 CHANNEL_01_CHECK_TIME_ENABLED=1
 ```
 
-The typical parameters are (for more details about the possible parameters, see [OpenProtocol documentation](../README.md)):
+The typical parameters are (for more details about the possible parameters, see [OpenProtocol documentation](./README.md)):
 
 - `CHANNEL_<channel>`: Define the IP address used to communicate with the tool.
 - `CHANNEL_<channel>_TYPE`: Defines the OpenProtocol communication variant, **must** be set to `MTC`.
@@ -93,7 +93,7 @@ The typical parameters are (for more details about the possible parameters, see 
 - `CHANNEL_<channel>_CCW_ACK`: (optional) If set to a nonzero value, then the CCWSel switch is monitored for
 the correct position - i.e. if OGS expects loosen, the switch must be set to the CCW position.
 - `CHANNEL_<channel>_WAIT_FOR_RESULT`: (optional, default=500) Set the timeout for waiting for a valid MID0061 result from the tool (in Milliseconds). If not configured, uses 500ms - this is relevant to workaround firmware issues in the tool, where the tool does not send a result even though the tool was started (for short starts in clockwise and generally in loosen). Can be decreased, if the default waiting time for loosen is too high (or better contact your tool vendor for a fixed firmware).
-- `CHANNEL_<channel>_CURVE_REQUEST`: Set to 1 to enable curve transmission over OpenProtocol, set to 0 to disable. Set to 1, if you need the curve data in OGS (e.g. for display or dynamic curve analysis with LUA scripting). Disable (set to zero), if you don't need it (for performance reasons or if you don't have a license). See also [tool data output](#tool-data-output-tool-data-http-output) for additional configuration.
+- `CHANNEL_<channel>_CURVE_REQUEST`: Set to 1 to enable curve transmission over OpenProtocol, set to 0 to disable. Set to 1, if you need the curve data in OGS (e.g. for display or dynamic curve analysis with LUA scripting). Disable (set to zero), if you don't need it (for performance reasons or if you don't have a license). See also [tool data output](#tool-data-output) for additional configuration.
 - `CHANNEL_<channel>_CHECK_TIME_ENABLED`: (recommended) If set to a nonzero value, then the tools internal time is synchronized with the OGS date and time.
 
 :::info
@@ -106,7 +106,7 @@ To make OGS control loosening and tightening correctly, the following requiremen
 
 :::
 
-### Tool data output {#tool-data-http-output}
+### Tool data output
 
 Like other tools, the `MT Focus 6000` tools can use the OGS buit-in connectivity options to send out data and curves (`Traceability` data) to backend data management systems (like [ToolsNet](https://www.atlascopco.com/en-us/itba/products/assembly-solutions/software-solutions/toolsnet-8-sku4531), [CSP I-P.M.](https://www.csp-sw.com/quality-management-software-solutions/error-prevention-with-ipm/), [Sciemetric QualityWorX](https://www.sciemetric.com/data-intelligence/qualityworx-data-collection), [QualityR](https://www.haller-erne.de/qualityr-web/), etc.). 
 
