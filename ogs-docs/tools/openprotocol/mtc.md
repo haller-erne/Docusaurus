@@ -20,11 +20,37 @@ They use the [OpenProtocol](../README.md) communication protocol to communicate 
 
 <!-- ![Nexo2 cordless nutrunner](resources/nexo2.jpg) -->
 
+:::danger
+
+Be careful when switching on the power supply of the tool/controller. By default the tool runs an automatic calibration cycle on powerup which makes the tools output drive rotate.
+
+Before powering up the tool/controller make sure, that the tool can run freely!
+
+:::
+
+## Prerequisites and Notes
+
+:::warning
+
+The controller must be upgrade to a minimum firmware version of `V3.6.0.8`. Earlier firmware versions do not support blocking loosening over OpenProtocol! 
+
+:::
+
+The following versions are required:
+
+- MT FOCUS 6000 Controller: V3.6.0.8
+- ToolsTalk MT 9.6.1.0 (or any other version compatible with the MT FOCUS 6000 Controller firmware)
+
+The current firmware version of the MT Focus 6000 controller (V3.6.0.8) still has some limitations in its OpenProtocol implementation:
+
+- Data output over MID0061 sometimes does not send a result, even though the tool was started. While this is not generally an issue, it does increment the batch counter in this case, leading to blocking the tool without the integrator being noticed. This reproducibly happens in V3.6.0.8, if the start button is pushed for a short time. OGS works around this bug by monitoring the BUSY signals falling edge - in case no MID0061 result is received within the time window specified in station.ini, the batch counter is reset. In this case, it is assumed, that the tool did not create any relevant torque, so a retry is allowed (heuristics for the "play at start button" case).
+- Loosening runs do not send any result over MID0061. OGS works around this issue by waiting for the falling edge of BUSY and internally resetting the bolts tightened state if the falling edge is detected for a loosening run.  
+
 ## Installation and configuration
 
 ### OGS project configuration
 
-For generic information about how to configure OGS with OpenProtocol tools, see  [OpenProtocol documentation](../README.md).
+For generic information about how to configure OGS with OpenProtocol tools, see [OpenProtocol documentation](../README.md).
 
 ### Tool registration and configuration
 
@@ -36,7 +62,7 @@ heMTF6000.dll=1
 
 The MicroTorque controllers are identified by specifying the tool type `MTC` in the `[OPENPROTO]` section of `station.ini`. 
 
-A typical configuration of the `[OPENPROTO]` section looks like the following :
+A typical configuration of the `[OPENPROTO]` section looks like the following (assuming the MT Focus 6000 controller is used as tool #1 (Channel 01)):
 
 ``` ini
 [OPENPROTO]
@@ -44,8 +70,8 @@ A typical configuration of the `[OPENPROTO]` section looks like the following :
 CHANNEL_01=10.10.2.184
 CHANNEL_01_PORT=4545
 CHANNEL_01_TYPE=MTF
-; Enable time synchronization 
-CHANNEL_01_CHECK_TIME_ENABLED=1
+; 
+CHANNEL_01_WAIT_FOR_RESULT=500
 ; Force CCW switch selection for rework/loosen
 CHANNEL_01_CCW_ACK=1
 ; Enable cyclic enable check
@@ -53,6 +79,8 @@ CHANNEL_01_CHECK_EXT_COND=1
 ; To enable curve transmission, set to 1:
 ; NOTE: requires a license!
 CHANNEL_01_CURVE_REQUEST=0
+; Enable time synchronization 
+CHANNEL_01_CHECK_TIME_ENABLED=1
 ```
 
 The typical parameters are (for more details about the possible parameters, see [OpenProtocol documentation](../README.md)):
@@ -60,18 +88,57 @@ The typical parameters are (for more details about the possible parameters, see 
 - `CHANNEL_<channel>`: Define the IP address used to communicate with the tool.
 - `CHANNEL_<channel>_TYPE`: Defines the OpenProtocol communication variant, **must** be set to `MTC`.
 - `CHANNEL_<channel>_PORT`: (optional) Define the TCP port number used for OpenProtocol(typically 4545).
-- `CHANNEL_<channel>_CHECK_TIME_ENABLED`: (recommended) If set to a nonzero value, then the tools internal time is synchronized with the OGS date and time.
 - `CHANNEL_<channel>_CCW_ACK`: (optional) If set to a nonzero value, then the CCWSel switch is monitored for
 the correct position - i.e. if OGS expects loosen, the switch must be set to the CCW position.
-- `CHANNEL_<channel>_CURVE_REQUEST`: Set to 1 to enable curve transmission over OpenProtocol, set to 0 to disable. Set to 1, if you need the curve data in OGS (e.g. for display or dynamic curve analysis with LUA scripting). Disable (set to zero), if you don't need it (for performance reasons or if you don't have a license).
+- `CHANNEL_<channel>_WAIT_FOR_RESULT`: (optional, default=500) Set the timeout for waiting for a valid MID0061 result from the tool (in Milliseconds). If not configured, uses 500ms - this is relevant to workaround firmware issues in the tool, where the tool does not send a result even though the tool was started (for short starts in clockwise and generally in loosen). Can be decreased, if the default waiting time for loosen is too high (or better contact your tool vendor for a fixed firmware).
+- `CHANNEL_<channel>_CURVE_REQUEST`: Set to 1 to enable curve transmission over OpenProtocol, set to 0 to disable. Set to 1, if you need the curve data in OGS (e.g. for display or dynamic curve analysis with LUA scripting). Disable (set to zero), if you don't need it (for performance reasons or if you don't have a license). See also [tool data output](#tool-data-output-tool-data-http-output) for additional configuration.
+- `CHANNEL_<channel>_CHECK_TIME_ENABLED`: (recommended) If set to a nonzero value, then the tools internal time is synchronized with the OGS date and time.
+
+:::info
+
+To make OGS control loosening and tightening correctly, the following requirements must be met:
+
+- Set the controllers `Tool loosening trigger` to `Select loosening` mode (see [controller configuration below](#configuration))
+- In the workflow editor, set the MTF tools loosening program to empty (or 99).
+- In `station.ini` set the `CHANNEL_<xx>_CHECK_EXT_COND=1` 
+
+:::
 
 ### Tool data output {#tool-data-http-output}
 
-See [Tool data http output](#tool-data-http-output) for more information about how to configure the tools built-in data output drivers.
+Like other tools, the `MT Focus 6000` tools can use the OGS buit-in connectivity options to send out data and curves (`Traceability` data) to backend data management systems (like [ToolsNet](https://www.atlascopco.com/en-us/itba/products/assembly-solutions/software-solutions/toolsnet-8-sku4531), [CSP I-P.M.](https://www.csp-sw.com/quality-management-software-solutions/error-prevention-with-ipm/), [Sciemetric QualityWorX](https://www.sciemetric.com/data-intelligence/qualityworx-data-collection), [QualityR](https://www.haller-erne.de/qualityr-web/), etc.). 
+
+To understand the system architecture and details on how to use data output in general, please see [OGS Traceability](../../dataoutput/traceability.md). To setup `Traceability` for `MT Focus 6000` tools, enable `Traceability` and add the tools channel(s) to the list of channels in the `[FTP_CLIENT]` (or `[HTTP_CLIENT]`) section.
+
+Here is a sample setup:
+
+```ini
+[FTP_CLIENT]
+Enabled=1
+;... 
+; (more settings)
+;...
+; Parameters for each channel:
+CHANNEL_01_INFO={ "ChannelName": "WS010|AC_MTF6000_1", "location name": ["Tool", "Line 2", "WS010", "default", "", "", ""] }
+```
+
+The following parameters are **required** for the `MT Focus 6000` tools, as the tool does not provide them through its interface:
+
+- `ChannelName`: Defines the station and channel name seperated by a pipe symbol (`<station>|<channel>`).
+- `location name`: Defines the location name values to use. Note that this setting depends on the Sys3xxGateway settings for processing the tightening results. Make sure to add the relevant information (like data link name, building, line name, etc.), so the tool can be registered in the correct organizational unit.
 
 ## Tool configuration
 
 ### Firmware version
+
+The officially supported and tested firmware version for the `MT Focus 6000` controller is as follows:
+
+![alt text](resources/ac-mtf-firmware.png)
+
+Things to check here:
+
+- MT Focus 6000 controller firmware version (S/W ver.) `3.6.0.8`
+- ToolsTalk MT `9.6.1.0` (or other compatibe versions)
 
 Please contact [Atlas Copco](https://www.atlascopco.com) for information about current firmware versions - it is recommended to use up-to-date firmware for compatibility, performance and security!
 
@@ -79,171 +146,40 @@ Please contact [Atlas Copco](https://www.atlascopco.com) for information about c
 
 See [MT Focus 6000 online manual](https://picontent.atlascopco.com/cont/external/dir/20/1181269515_A0580001_html5_external/index.html) and the [Tools Talk MT online Manual](https://picontent.atlascopco.com/cont/external/dir/4e/1275008523__html5_external/index.html) for details about how to configure the tightening controller and enable OpenProtocol.
 
-Here are some screenshots on how to configure the settings:
+To configure the controller and tool, connect it to the Eternet network (or using a USB cable) and run ToolsTalk MT. In the connection pane, select one of favorites or create a new conntection by double-clicking one of the entries in the pane. Here is a sample for Ethernet: 
 
-Open the settings page by clicking the gear icon:
+![alt text](resources/ac-mtc-connect.png)
 
-<img width="300" src={require('./resources/MTF_1von3.jpg').default} alt="AC Microtorque" />
+### Controller settings
 
-Open the sources:
+To open the controller settings, use `ToolsTalk MT` and open the `Controller settings` view by clicking the main symbol bars controller settings icon:
 
-<img width="300" src={require('./resources/MTF_2von3.jpg').default} alt="AC Microtorque" />
+![alt text](resources/ac-mtf-tt-controller-menu.png)
 
-Select OpenProtocol as source:
+This will then open the `Controller settings` view. Scroll down to the `Startup`, `Misc` and `Tool settings` sections and configure as follows.  
 
-<img width="300" src={require('./resources/MTF_3von3.jpg').default} alt="AC Microtorque" />
+![alt text](resources/ac-mtf-tt-controller-settings.png)
 
-<!--
-### Tool mode
+Important settings are:
 
-The Nexo tools can operate in manual or automatic mode. For OGS to be able to control the tool, automatic mode is required. Depending on your requirements, you can configure the tool to enable switching modes through the tool display (not recommended).
+- `Startup: Select source`: set to `Any` or `OpenProtocol only` to allow OGS to control the tool over OpenProtocol.
 
-The mode must be setup as follows:
+#### Tool trigger configuration
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+It is **very important** to configure the tool trigger parameters correctly. To do so, use `ToolsTalk MT` and open the `Configurations` view by clicking the main symbol bars configuration icon:
 
-<Tabs>
-  <TabItem value="nexo-2" label="Nexo 2">
+![alt text](resources/ac-mtf-tt-configs-menu.png)
 
-![alt text](resources/nexo2-mode-simple.png)
+This will then open the `Configurations` view, where you can open the tools `Configuration` (double-click a line).  
 
-The relevant settings are:
+![alt text](resources/ac-mtf-triggerconfig.png)
 
-- `ID code source`: must be set to OpenProtocol, so OGS can send the ID
-- `Operation mode settings`: set operation mode to `auto`
+The settings are:
 
-Make sure the set the `active column` to `A`!
-
-  </TabItem>
-  <TabItem value="nexo" label="Nexo">
-
-![alt text](resources/nexo-mode-simple.png)
-
-The relevant settings are:
-
-- `ID code source`: must be set to OpenProtocol, so OGS can send the ID
-- `Operation mode settings`: set operation mode to `auto`
-
-Make sure the set the `active column` to `A`!
-
-  </TabItem>
-</Tabs>
-
-### OpenProtocol configuration
-
-#### Enable and configure OpenProtocol
-
-As OGS needs OpenProtocol to control the tool, the OpenProtocol (Data -> OpenProtocol) must be configured as follows:
-
-<Tabs>
-  <TabItem value="nexo-2" label="Nexo 2">
-
-![alt text](resources/nexo2-openprotocol.png)
-
-  </TabItem>
-  <TabItem value="nexo" label="Nexo">
-
-![alt text](resources/nexo-openprotocol.png)
-
-  </TabItem>
-</Tabs>
-
-
-#### Setup PLC signals
-
-To allow controlling the tool correctly, the PLC signals should be set up as follows:
-
-<Tabs>
-  <TabItem value="nexo-2" label="Nexo 2">
-
-![alt text](resources/nexo2-plc-table-1.png)
-![alt text](resources/nexo2-plc-table-2.png)
-
-  </TabItem>
-  <TabItem value="nexo" label="Nexo">
-
-![alt text](resources/nexo-plc-table-1.png)
-![alt text](resources/nexo-plc-table-2.png)
-
-  </TabItem>
-</Tabs>
-
-Important:
-- Never assign signal `En` to opctrl input 3.0 – this may enable the tool without
-  control of the heOGS software.
-- Never assign signal `En` to tool input 0.2 – this will enable the tool without
-  control of the heOGS software.
-- Always assign signal `CcwIgnore` or `CcwLock` to opctrl input 0.1. This allows 
-  OGS to reliably block loosening loosening, even if the network connection to the tool gets lost.
-
-### Using the integrated scanner
-
-Some Nexo models provide a built-in barcode scanner. This barcode scanner can be
-used instead of or in combination with any other ID-Code source in OGS. Using the
-Nexo scanner, it is therefore possible to start a workflow, select jobs or do other
-scan operations inside a workflow.
-
-Please see the Nexo system manual for detailed information about how to use and configure the scanner.  The following section shows a simple setup which allows the
-user to trigger the Nexo builtin scanner by pressing a button below the Nexo display.
-
-#### Configure OpenProtocol
-
-To enable ID-code forwarding, the option **Also forward ID-codes from non-selected sources** must be enabled in the OpenProtocol configuration (Home => Data => OpenProtocol):
-
-![alt text](resources/nexo2-openprotocol.png)
-
-#### Configure Mode setting
-
-To enable the scanner, add an `ID Input` step to the Mode (Home => Mode) settings as shown in the following screenshot:
-
-![alt text](resources/nexo2-mode-scanner.png)
-
--->
+- `Tool loosening trigger`: **must** be set to `Select loosening`. This makes the loosening slider on the tool act as a selector between tightening and loosening. With this setting, the tool only starts loosening, if the loosening slider is moved to the loosen position **and** one of the start switches (trigger or push-to-start) is activated.
+- `Tool start trigger` and `Trigger Push-To-Start`: setup as needed, preferred mode is `Hold` (which stops the tool, if the trigger is released).
 
 <!--
-## Data output configuration
-
-To make the tools send out data and curves (`Traceability` data) to backend data management systems (like [CSP I-P.M.](https://www.csp-sw.com/quality-management-software-solutions/error-prevention-with-ipm/), [Sciemetric QualityWorX](https://www.sciemetric.com/data-intelligence/qualityworx-data-collection), [QualityR](https://www.haller-erne.de/qualityr-web/), etc.), the builtin data output interfaces can be used. 
-
-To send data out to a central Sys3xxGateway/QualityR server, typically the following options are possible:
-
-1. (preferred) Use the “Standard Nexo” data output with the http transfer option. 
-
-```
-By default this transmits all step data and tightening curves
-```
-
-2. Use the “Standard Nexo” data output with the http transfer option. 
-
-```
-By default this also transmits all step data and tightening curves, but sometimes causes troubles with the network infrastructure (firewall transversal,
-transmission of plaintext passwords).
-```
-
-The “Standard Nexo” data output with http transfer is the preferred option, else
-use “Standard Nexo” with FTP.
-
-Data reported to Sys3xxGateway will use the following mapping by default:
-
-- Nexo IP address => Default Sys3xxGateway station name
-- Nexo channel name => if non-empty is used as Sys3xxGateway station name
-- Nexo channel number => Sys3xxGateway channel number
-- Tightening program name => Used as operation name (QWX)
-
-To enable http data output, use Home => Data => Standard Nexo and configure as follows:
-
-![alt text](resources/nexo2-http-output.png)
-
-As the Nexo 2 http data output provides incorrect localtion information, make sure to configure the `Data` settings (click the button labeled `Data` in the header row) as follows (disable the location element): 
-
-![alt text](resources/nexo2-http-data.png)
-
-To minimize transmitted file sizes, go to the `Storage`settings (click the button labeled `Storage` in the header row) and set "json formatted output" to `No`: 
-
-![alt text](resources/nexo2-http-storage.png)
-
-
 ## Nexo 1: Wifi notes
 
 - Nexo 1 has issues, if roaming is enabled. Make sure to disable the "roaming" setting in the wifi configuration.
