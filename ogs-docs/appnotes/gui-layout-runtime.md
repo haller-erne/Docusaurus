@@ -91,6 +91,35 @@ As the application is running in kiosk mode (covering the full screen and hiding
 
 If the side panel is enabled, the sidepanel can also be opened on the process page by double-clicking the project process page logo (at top-right). It can also be shown by the hotkey key (defined in `station.ini`). The sidepanel shows some buttons in the header row, especially to hide the panel and to minimize the application.
 
+## Styling
+
+Starting with OGS V3.1.11, you can also modify the stylsheets used for the user interface. If you need to style the UI, then contact us.
+
+To set the styles, drop the style files into the OGS installation folder (where `monitor.exe` is located) and edit `monitor.ini` as follows:
+
+```ini title='monitor.ini'
+[STYLE]
+; Set the default application style:
+;style=
+; Override the start view style:
+startview=MyStyle.StartView.style
+; Override the process view style:
+processview=MyStyle.ProcessView.style
+```
+
+The following options are available in the `[STYLE]` section:
+
+- `style`: Filename of a style file. If set, then overrides the default application style.
+- `startview`: Filename of a style file. If set, then overrides the start view style.
+- `processview`: Filename of a style file. If set, then overrides the process view style.
+
+If the entry is missing, empty or the file cannot be found in the OGS installation folder, then the default style is used. 
+
+:::note
+
+The demo mode popup is shown before the styles are applied - if the demo mode is active, then you will see the default style until the startup nag screen is acnowledged.
+
+:::
 
 ## More options
 
