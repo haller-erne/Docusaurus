@@ -103,9 +103,9 @@ Configure the tool by sending the address setup command through the Flowlight ap
 
 2. Select and connect the controller
 
-```
+
 ![flow_light2](resources/Flowlight-2.png)
-```
+
 
 3. Make adjustments to the setup values and press the Start button
 
