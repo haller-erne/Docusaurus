@@ -243,6 +243,72 @@ WireCryptPlugin = ChaCha64, ChaCha
 
 As now also database access is limited to aliased databases, all databases which shall be accessed must be added to `database.conf` (and disable `employee.fdb`).
 
+## OGS configuration
+
+:::danger[Requirements] 
+
+To use OGS with AD authentication for the Firebird database connections,
+you *must* use the `Operator Guidance System-<version>-Trumpf.exe` installer. The standard installer currenty (as of `V3.1.x`) does not support AD integrated database connections!
+
+:::
+
+### heOpCfg and heOpImp
+
+The workflow editor (`heOpCfg`) and the database import utility (`heOpImp`) by default use AD authentication for the database connections defined in their `*.ini` files.
+
+For the workflow editor, you must define the server databases as database links in `heOpCfg.ini` as follows:
+
+```ini title="heOpCfg.ini"
+[GLOBAL]
+CFG_DATABASE_01=myserver.mydomain:dbalias
+CFG_DATABASE_02=WIN-1PKLBD1QSCC:config_db
+;... more
+```
+
+The configured database links are (after restarting heOpCfg) available in the `Database --> Reopen` menu:
+
+![alt text](config-heOpCfg-reopen.png)
+
+
+To correctly import the `station.fds` from the server hosted configuration database over AD, the same information can be added (only needed for interactive use, not needed if called from the workflow editor or through a commandline automation script) to `heOpImp.ini` accordingly:
+
+```ini title="heOpImp.ini"
+[DB]
+CFG_DATABASE_01=myserver.mydomain:dbalias
+CFG_DATABASE_02=WIN-1PKLBD1QSCC:config_db
+;... more
+```
+
+For `heOpImp` there is a special case, if you also run the local database instance (hosting the station database `station.fds`) in AD mode. In this case, you typically will also disable the direct filesystem access, so you will have to specify the alias name and the access mode (to distinguish between classic and AD access). To do so, modify `heOpImp.ini` as follows:
+
+```ini title="heOpImp.ini"
+[FDS]
+trusted=1
+dbname=myserver.mydomain:stationdbalias
+```
+
+The following parameters are available in the `[FDS]` section:
+
+- `trusted` (int, 0/1): If set to 1, then the database connection to `station.fds` is using AD authentication.
+- `dbname` (string): Allows specifying a database connection alias, if the local server dissables the direct filesystem access.
+
+### Monitor runtime
+
+To connect monitor to a `station.fds` using a non-standard database connection, the database connection parameters must be changed so set the user name to an empty string (thus forcing AD authentication).
+
+To do so, change the following in you projects `station.ini`:
+
+```ini title="station.ini"
+[GENERAL]
+; Define the database driver connection params (semikolon seperated list).
+; The format is key1=val1;key2=val2;...
+; Typical parameters are user_name=, password=, sql_dialect=, ...
+; To force AD authentication, set user_name to an empty string
+DBPARAMS=user_name=
+```
+
+
+
 ## Hardening checklist
 
 ### Local Firebird Server configuration
