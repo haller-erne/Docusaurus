@@ -107,7 +107,7 @@ Use the `lua_tool_helpers.lua` in your code - this provides helpers for register
 
 ### Tool driver interface functions
 
-The actual tool driver implementation is provided by implementing the tool driver interface functions - and return them as members of the module table. Note that each interface has a `channel` parameter with
+The actual tool driver implementation is provided by implementing the tool driver interface functions - and return them as members of the module table. Note that each interface has a `channel` parameter with a reference to the drivers instance channel object.
 
 A typical implementation would look like the following (adding the `_M.init()`, the `_M.enable()` and the the `_M.execute()` functions):
 
@@ -178,7 +178,7 @@ helpers.register_tool(_M)
 return _M
 ```
 
-The following functions can be implemented as part of the `simple` LUA tool driver interface:
+The following functions can be implemented as part of the `simple` LUA tool driver interface (these are called with a `channel` parameter instead of the low-level function, which are called with a `tool` parameter):
 
 
 | Function Name | Return Type | Description | Tags |
@@ -194,6 +194,27 @@ The following functions can be implemented as part of the `simple` LUA tool driv
 
 
 To cyclically poll a tool driver (e.g. to implement network communication), implement the modules `_M.poll()` function (low-level API) or register a global StatePoll function (use `StatePollFunctions.add()` and use the (low-level API) _M.channels table to iterate your drivers registered channels).
+
+:::
+
+The low-level functions provide only a `tool` parameter. If using this functions, then you will have to resolve the channel instance data yourself (see `lua_tool_helpers.lua` how this is handled). 
+
+:::note
+
+Generally prefer using the higher-level functions, only use the low-level functions for special cases!
+
+:::
+
+Some low-level functions, which are useful and not exposed through the higher-level api are:
+
+| Function Name | Return Type | Description | Tags |
+| -------- | ----------- | ----------- | ---- |
+| `extended_param_list(tool: integer)` | `result: string` | Is called, if tracebility output through `json_ftp.lua` is anabled. Allows returning a json string to be integrated into the data outpt. Note: if data elements are added below the well known json key `additional parameters`, then each key/value pair contained in it can be processed by Sys3xxGateway MSSQL output driver | None |
+| `get_tags(tool: integer)` | `result: string` | Is called, if tracebility output through `json_ftp.lua` is anabled. Allows returning a tuple of `<systemtype>, { <tags> }` (by default `0, { 'tag 1','tag 2','tag 3','tag 4','tag 5','tag 6' }`), which is used to identify the 6 measurement values provided in the tools result data. | None |
+
+:::note
+
+If you want to implement a low-level function, make sure to do so **after** calling the `helpers.register_tool()` function, as this function will possibly override yours!
 
 :::
 
@@ -273,6 +294,61 @@ _M.get_prg_string = function(tool)
 end
 ```
 
+Note, that there are also helper functions to implement default formatting based on format strings defined in `station.ini` or in the driver code:
+
+- `helpers.AddDefaultFormatters(_M)`
+- `helpers.read_fmt_config(channel)`
+
+See `lua_tool_helpers.lua` for more details.
+
+If you use `read_fmt_config(channel)`, then here is a sample excerpt from `station.ini` about how to configure the formatting. Note that the format strings support different formats depending on the result ok/nok status. If the json result format string has a "ok" or "nok" member, then this is used for formatting - if not, then the "fmt" is used instead for both cases.
+
+```ini title="station.ini"
+[LuaTool_MyLuaTool]
+FMT_UNITS={ "unit1":"uOhm", "unit2":"", "dec1":"1", "dec2":"0"}
+FMT_RESULTS={ "fmt":"%(M1)3.1f uOhm" }
+FMT_FOOTER={ "ok":"%(M1min)3.1f <= %(M1)3.1f uOhm <= %(M1max)3.1f", "nok":"NOK!"}
+FMT_PRG={ "fmt":"P = %(Prg)d" }
+; For the JSON-Data output (FTP/HTTP): define the system type and Res[1..6] data tags, e.g.:
+FMT_TAGS={ "system_type": 1, "tags": ["TF Torque", "TF Angle"] } 
+```
+
+To set the format using format strings from within the code, the function `helpers.read_fmt_config(channel)` can be used. This expects the `channel.fmt` table to have the formatting strings. Usually it is called from within the drivers `.init()` function as follows:
+
+```lua
+-------------------------------------------------------------
+-- Tool event: Initialize tool - called once during OGS init
+-- return 'OK' or some error text if the initialization failes.
+function _M.init(channel)
+    -- Decode/get my configuration (from station.ini) ans store in our channels cfg object
+    local cfg = {
+        -- copy/parse station.ini parameters
+		myparam = tonumber(channel.ini_params.myparam) or 0,
+    }
+    channel.cfg = cfg         	-- store the channels config data
+
+	-- setup formatting
+    channel.fmt = {				-- define the formatting
+        units = { unit1 = '', dec1 = 0, unit2 = '', dec2 = 0 },
+        results = { ok='OK', nok='NOK' },   --fmt = '%(M1)3.0f ms' },
+        footer = { fmt = 'digital IO', },   -- could use ok= and nok= instead!
+        prg = { fmt = '' },
+		--tags = { 0, {  'Tag 1', 'Tag 2', 'Tag 3', 'Tag 4', 'Tag 5', 'Tag 6' } }
+    }
+
+    return 'OK'               -- init successfully done
+end
+
+```
+
+### Tool driver traceability output
+
+Each custom driver can also take part of the tracebility output (enabled through `[HTTP_CLIENT]` or `[FTP_CLIENT]` enabled in `station.ini`). 
+
+To do so, the low-level functions `get_tags()` and `extended_param_list()` can be overridden to implement custom data fields and add custom data.
+
+| `extended_param_list(tool: integer)` | `result: string` | Is called, if tracebility output through `json_ftp.lua` is anabled. Allows returning a json string to be integrated into the data outpt. Note: if data elements are added below the well known json key `additional parameters`, then each key/value pair contained in it can be processed by Sys3xxGateway MSSQL output driver | None |
+| `get_tags(tool: integer)` | `result: string` | Is called, if tracebility output through `json_ftp.lua` is anabled. Allows returning a tuple of `<systemtype>, { <tags> }` (by default `0, { 'tag 1','tag 2','tag 3','tag 4','tag 5','tag 6' }`), which is used to identify the 6 measurement values provided in the tools result data. | None |
 
 ### Tool driver miscelaneous functions
 
