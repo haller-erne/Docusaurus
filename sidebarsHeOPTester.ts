@@ -21,6 +21,7 @@ const sidebars: SidebarsConfig = {
     {type: 'doc', id: 'settings', label: 'Settings'},
     {type: 'doc', id: 'licensing', label: 'Licensing'},
     {type: 'doc', id: 'troubleshooting', label: 'Troubleshooting'},
+    {type: 'doc', id: 'op-cli', label: 'op-cli (CI)'},
   ],
 };
 

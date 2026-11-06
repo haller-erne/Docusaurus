@@ -29,8 +29,9 @@ Welcome to the **OpenProtocol Tester** user guide. This application allows you t
 7. [Test Suites](07-test-suites.md) — Managing workspaces, running tests, generating reports
 8. [Tools & Utilities](08-tools.md) — Autosender, Hex Editor, Header Editor, Statistics
 9. [Settings & Configuration](09-settings.md) — Application settings, themes, workspace layouts
-10. [Licensing](10-licensing.md) — Demo mode, loading license files, registration
-11. [Troubleshooting & FAQ](11-troubleshooting.md) — Common issues and solutions
+10. [Licensing](10-licensing.md) - Demo mode, loading license files, registration
+11. [Troubleshooting & FAQ](11-troubleshooting.md) - Common issues and solutions
+12. [op-cli - Headless Test Runner](12-op-cli.md) - CI usage: licensing, exit codes, reports, sandbox
 
 ---
 
