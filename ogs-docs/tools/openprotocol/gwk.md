@@ -35,6 +35,8 @@ CHANNEL_01_PORT=4002
 CHANNEL_01_TYPE=GWK
 ; to enable curve transmission, set to 1:
 CHANNEL_01_CURVE_REQUEST=1
+; Set the following to enable barcode scanning from the tool
+CHANNEL_01_BARCODE_MID0051_REV=1
 ```
 
 The typical parameters are (for more details about the possible parameters, see [OpenProtocol documentation](../README.md)):
@@ -43,6 +45,7 @@ The typical parameters are (for more details about the possible parameters, see 
 - `CHANNEL_<channel>_PORT`: Define the TCP port number used for OpenProtocol(typically 4002).
 - `CHANNEL_<channel>_TYPE`: Defines the OpenProtocol communication variant, **must** be set to `GWK`.
 - `CHANNEL_<channel>_CURVE_REQUEST`: Set to 1 to enable curve transmission, set to 0 to disable curve transmission. Set to 1, if you have [tracebility output](#tool-data-output) enabled and want to get the tightening graph included in the data output. Disable (set to zero), if you don't need it (for performance reasons). In general, the new `Operator 22` tools are much faster in curve transmission, the older `Operator+` tools might cause delays up to a few seconds. Contact [GWK-Gerlach](https://www.gwk-gerlach.com/) for recent firmware versions with improved performance!
+- `CHANNEL_<channel>_BARCODE_MID0051_REV`: If set to a nonzero value, the MID0051 (ID-Code change) subscription is enabled. This can be used to read ID-Codes through a barcode scanner built into the tool (instead of using a seperate scanner).
 
 ### Tool data output
 
